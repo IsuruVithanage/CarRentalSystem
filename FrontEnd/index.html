@@ -2,9 +2,121 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Car Rental System</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #ml{
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar.png");
+        }
+
+        #fieldDivml{
+            width: 760px;
+            height: 700px;
+            background-color: #ffffff;
+            border-radius: 25px;
+            position: relative;
+            top: 80px;
+            left: 100px;
+            box-shadow: 5px 10px 18px #363636;
+        }
+
+        #unDiv{
+            width: 600px;
+            position: relative;
+            top: 170px;
+            left: 63px;
+        }
+
+        #pDiv{
+            width: 600px;
+            position: relative;
+            top: 200px;
+            left: 63px;
+        }
+
+        #btnlog{
+            position: absolute;
+            top: 500px;
+            left: 300px;
+            width: 150px;
+        }
+
+        #guestr{
+            position: absolute;
+            top: 400px;
+            left: 220px;
+        }
+
+        #custr{
+            position: absolute;
+            top: 400px;
+            left: 320px;
+        }
+
+        #adminr{
+            position: absolute;
+            top: 400px;
+            left: 460px;
+        }
+    </style>
 </head>
 <body>
+<main id="ml">
+    <section class="container-fluid">
+        <section class="row">
+            <!--Image-->
+            <div class="col-5 mt-5">
+                <img src="assets/images/carLogo.png" alt="" style="width: 450px; height: 350px; position: relative; top: 150px; left: 150px">
+                <h1 style="position: relative; color: white; font-family: Impact; top: 180px; left: 120px; font-size: 70px; text-shadow: 2px 2px 8px #494949;">Car Rental System</h1>
+            </div>
 
+            <!--Fields-->
+            <div class="col-7">
+                <section class="row">
+                    <div id="fieldDivml">
+                        <h1 style="position: relative; top: 50px; text-align: center; font-family: Arial;">User Login</h1>
+                        <div id="unDiv">
+                            <input type="email" class="form-control" id="txtSearchCust"
+                                   aria-describedby="emailHelp" placeholder="User Name" style="height: 50px; font-size: 20px">
+                        </div>
+                        <div id="pDiv">
+                            <input type="email" class="form-control" id="txtpassword"
+                                   aria-describedby="emailHelp" placeholder="Password" style="height: 50px; font-size: 20px">
+                        </div>
+                        <div id="guestr">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckguest" style="font-size: 20px">
+                            <label class="form-check-label" style="font-size: 20px">
+                                Guest
+                            </label>
+                        </div>
+                        <div id="custr">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckCust" style="font-size: 20px">
+                            <label class="form-check-label" style="font-size: 20px">
+                                Customer
+                            </label>
+                        </div>
+                        <div id="adminr">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckadmin" style="font-size: 20px">
+                            <label class="form-check-label" style="font-size: 20px">
+                                Admin
+                            </label>
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-lg" id="btnlog">Log in</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </section>
+
+</main>
+<main id=""></main>
+
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/jQuerry/jquery-3.6.0.min.js"></script>
+<script src="assets/sweetalert.min.js"></script>
 </body>
 </html>
