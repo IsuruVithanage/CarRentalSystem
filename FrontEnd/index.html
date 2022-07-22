@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        #ml{
+        #ml {
             width: 100vw;
             height: 100vh;
             background-image: url("assets/images/bgcar.png");
+            background-size: cover;
         }
 
-        #fieldDivml{
+        #fieldDivml {
             width: 760px;
             height: 700px;
             background-color: #ffffff;
@@ -23,44 +24,165 @@
             box-shadow: 5px 10px 18px #363636;
         }
 
-        #unDiv{
+        #unDiv {
             width: 600px;
             position: relative;
             top: 170px;
             left: 63px;
         }
 
-        #pDiv{
+        #pDiv {
             width: 600px;
             position: relative;
             top: 200px;
             left: 63px;
         }
 
-        #btnlog{
+        #btnlog {
             position: absolute;
             top: 500px;
             left: 300px;
             width: 150px;
         }
 
-        #guestr{
+        #guestr {
             position: absolute;
             top: 400px;
             left: 220px;
         }
 
-        #custr{
+        #custr {
             position: absolute;
             top: 400px;
             left: 320px;
         }
 
-        #adminr{
+        #adminr {
             position: absolute;
             top: 400px;
             left: 460px;
         }
+
+        /*home page style*/
+        #mh {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
+        }
+
+        header > div > ul {
+            position: absolute;
+            right: 10px;
+            top: 1px;
+            bottom: 0;
+            font-size: 19px;
+            font-family: 'B612', sans-serif;
+            list-style: none;
+            color: white;
+
+        }
+
+        header > div:nth-child(1) > ul > a > li {
+            margin-top: 10px;
+            padding: 0 19px 0 19px;
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+
+        }
+
+        header > div:nth-child(1) > div {
+            position: relative;
+            height: 30px;
+        }
+
+        header > div:nth-child(1) > div:nth-child(1) > h3 {
+            margin-top: 9px;
+            padding: 0 19px 0 19px;
+            display: inline-block;
+            font-size: 25px;
+            letter-spacing: 5px;
+            position: absolute;
+            font-family: 'B612', sans-serif;
+            color: white;
+        }
+
+
+        header > div:nth-child(1) {
+            background-color: rgba(42, 37, 37, 0.5);
+            color: #848484;
+            height: 7vh;
+            width: 100%;
+        }
+
+        header > div > h1 {
+            color: #ffffff;
+            right: 25px;
+            position: absolute;
+            font-size: 70px;
+            top: 255px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        header > div > h2 {
+            color: #c1c1c1;
+            right: 25px;
+            position: absolute;
+            font-size: 45px;
+            top: 145px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        header > div > h2:nth-child(5) {
+            top: 203px;
+
+        }
+
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        #hdiv {
+            width: 700px;
+            height: 400px;
+            background-color: rgba(66, 64, 64, 0.83);
+            margin: auto;
+            top: 80px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+        }
+
+        .orange{
+            color: orange;
+        }
+
+        header > div:nth-child(1) > ul > a > li:hover{
+            color: orange;
+        }
+
+        #btnhserach{
+            position: absolute;
+            top: 320px;
+            left: 260px;
+            width: 170px;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+            background-color: orange;
+            font-family: Arial;
+            border-radius: 10px;
+
+        }
+
+        #btnhserach:hover{
+            background-color: #ee8003;
+        }
+
+
     </style>
 </head>
 <body>
@@ -69,37 +191,45 @@
         <section class="row">
             <!--Image-->
             <div class="col-5 mt-5">
-                <img src="assets/images/carLogo.png" alt="" style="width: 450px; height: 350px; position: relative; top: 150px; left: 150px">
-                <h1 style="position: relative; color: white; font-family: Impact; top: 180px; left: 120px; font-size: 70px; text-shadow: 2px 2px 8px #494949;">Car Rental System</h1>
+                <img src="assets/images/carLogo.png" alt=""
+                     style="width: 450px; height: 350px; position: relative; top: 150px; left: 150px">
+                <h1 style="position: relative; color: white; font-family: Impact; top: 180px; left: 120px; font-size: 70px; text-shadow: 2px 2px 8px #494949;">
+                    Car Rental System</h1>
             </div>
 
             <!--Fields-->
             <div class="col-7">
                 <section class="row">
                     <div id="fieldDivml">
-                        <h1 style="position: relative; top: 50px; text-align: center; font-family: Arial;">User Login</h1>
+                        <h1 style="position: relative; top: 50px; text-align: center; font-family: Arial;">User
+                            Login</h1>
                         <div id="unDiv">
                             <input type="email" class="form-control" id="txtSearchCust"
-                                   aria-describedby="emailHelp" placeholder="User Name" style="height: 50px; font-size: 20px">
+                                   aria-describedby="emailHelp" placeholder="User Name"
+                                   style="height: 50px; font-size: 20px">
                         </div>
                         <div id="pDiv">
                             <input type="email" class="form-control" id="txtpassword"
-                                   aria-describedby="emailHelp" placeholder="Password" style="height: 50px; font-size: 20px">
+                                   aria-describedby="emailHelp" placeholder="Password"
+                                   style="height: 50px; font-size: 20px">
                         </div>
                         <div id="guestr">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckguest" style="font-size: 20px">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckguest"
+                                   style="font-size: 20px">
                             <label class="form-check-label" style="font-size: 20px">
                                 Guest
                             </label>
                         </div>
                         <div id="custr">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckCust" style="font-size: 20px">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckCust"
+                                   style="font-size: 20px">
                             <label class="form-check-label" style="font-size: 20px">
                                 Customer
                             </label>
                         </div>
                         <div id="adminr">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckadmin" style="font-size: 20px">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckadmin"
+                                   style="font-size: 20px">
                             <label class="form-check-label" style="font-size: 20px">
                                 Admin
                             </label>
@@ -113,10 +243,67 @@
     </section>
 
 </main>
-<main id=""></main>
+<main id="mh">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li>Home</li>
+                </a>
+                <a href="#">
+                    <li>Places</li>
+                </a>
+                <a href="#foo">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+
+    <h1 style="text-align: center; color: white; font-size: 100px; padding-top: 30px;">Find Your <span class="orange">Ride..</span></h1>
+
+    <div id="hdiv">
+        <div style="position: absolute; top: 70px; left: 70px">
+            <label style="color: white; font-size: 25px">Pick Date</label>
+            <input type="date" class="form-control" id="pickDate"
+                   aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px">
+        </div>
+        <div style="position: absolute; top: 180px; left: 70px">
+            <label style="color: white; font-size: 25px">Return Date</label>
+            <input type="date" class="form-control" id="returnDate"
+                   aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px">
+        </div>
+
+        <div style="position: absolute; top: 70px; left: 370px">
+            <label style="color: white; font-size: 25px">Pick Time</label>
+            <input type="time" class="form-control" id="pickTime"
+                   aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px">
+        </div>
+
+        <div style="position: absolute; top: 180px; left: 370px">
+            <label style="color: white; font-size: 25px">Pick Time</label>
+            <input type="time" class="form-control" id="returnTime"
+                   aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px; ">
+        </div>
+
+        <button type="button"  id="btnhserach">Search</button>
+
+
+
+    </div>
+
+</main>
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/jQuerry/jquery-3.6.0.min.js"></script>
 <script src="assets/sweetalert.min.js"></script>
+<script>
+    $("#ml").css("display", "none");
+</script>
+
 </body>
 </html>
