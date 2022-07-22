@@ -71,6 +71,7 @@
             background-size: cover;
         }
 
+        /*nav bar*/
         header > div > ul {
             position: absolute;
             right: 10px;
@@ -144,6 +145,8 @@
             overflow: hidden;
         }
 
+        /*-------------------------------------*/
+
         #hdiv {
             width: 700px;
             height: 400px;
@@ -156,15 +159,15 @@
             position: absolute;
         }
 
-        .orange{
+        .orange {
             color: orange;
         }
 
-        header > div:nth-child(1) > ul > a > li:hover{
+        header > div:nth-child(1) > ul > a > li:hover {
             color: orange;
         }
 
-        #btnhserach{
+        #btnhserach {
             position: absolute;
             top: 320px;
             left: 260px;
@@ -178,8 +181,24 @@
 
         }
 
-        #btnhserach:hover{
+        #btnhserach:hover {
             background-color: #ee8003;
+        }
+
+        #mb {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
+
+        }
+
+        .vehicleContainer {
+            width: 700px;
+            height: 200px;
+            top: 70px;
+            left: 520px;
+            position: relative;
         }
 
 
@@ -264,7 +283,8 @@
         </div>
     </header>
 
-    <h1 style="text-align: center; color: white; font-size: 100px; padding-top: 30px;">Find Your <span class="orange">Ride..</span></h1>
+    <h1 style="text-align: center; color: white; font-size: 100px; padding-top: 30px;">Find Your <span class="orange">Ride..</span>
+    </h1>
 
     <div id="hdiv">
         <div style="position: absolute; top: 70px; left: 70px">
@@ -290,12 +310,48 @@
                    aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px; ">
         </div>
 
-        <button type="button"  id="btnhserach">Search</button>
-
+        <button type="button" id="btnhserach">Search</button>
 
 
     </div>
 
+</main>
+<main id="mb">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li>Home</li>
+                </a>
+                <a href="#">
+                    <li>Places</li>
+                </a>
+                <a href="#foo">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+    <div class="vehicleContainer">
+            <a href="#" style="text-decoration: none; color: black">
+                <div class="container" style="background-color: white; height: 200px">
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="assets/images/c1.png" alt="" width="130" height="90">
+                        </div>
+                        <div class="col-7">
+                            <h1 style="font-size: 30px; text-decoration: none">Toyota Aqua</h1>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
 </main>
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -303,6 +359,7 @@
 <script src="assets/sweetalert.min.js"></script>
 <script>
     $("#ml").css("display", "none");
+    $("#mh").css("display", "none");
 </script>
 
 </body>
