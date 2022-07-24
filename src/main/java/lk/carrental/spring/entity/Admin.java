@@ -7,27 +7,18 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
 @Entity
-public class Customer {
+public class Admin {
     @Id
-    private String custID;
+    private String adminID;
     private String name;
-    private String address;
     private String email;
-    private String licenseNo;
-    private String nic;
     private String contact;
-
-
     private String userID;
 
 }
-
