@@ -5,9 +5,12 @@ import lk.carrental.spring.entity.Customer;
 import lk.carrental.spring.repo.CustomerRepo;
 import lk.carrental.spring.service.CustomerService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @Service
@@ -28,5 +31,11 @@ public class CustomerServiceImpl implements CustomerService {
             throw new RuntimeException("Customer Already Exist..!");
         }
 
+    }
+
+    @Override
+    public List<CustomerDTO> getAllCustomers() {
+        return mapper.map(repo.findAll(), new TypeToken<List<CustomerDTO>>() {
+        }.getType());
     }
 }
