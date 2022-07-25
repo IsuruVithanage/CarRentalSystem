@@ -5,8 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,12 +18,14 @@ import javax.persistence.Id;
 public class RentReq {
     @Id
     private String rentID;
-    private String custID;
     private String pickedDate;
     private String pickedTime;
     private String returnDate;
     private String returnTime;
-    private String vehicleID;
     private String driverNeed;
-    private String userID;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Vehicle vehicle;
+
+    private Driver driver;
 }
