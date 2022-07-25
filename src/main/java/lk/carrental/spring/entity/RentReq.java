@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,5 +24,11 @@ public class RentReq {
     @OneToOne(cascade = CascadeType.ALL)
     private Vehicle vehicle;
 
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "driverID",referencedColumnName = "driverID",nullable = false)
     private Driver driver;
+
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "customerID",referencedColumnName = "custID",nullable = false)
+    private Customer customer;
 }
