@@ -38,4 +38,24 @@ public class CustomerServiceImpl implements CustomerService {
         return mapper.map(repo.findAll(), new TypeToken<List<CustomerDTO>>() {
         }.getType());
     }
+
+    @Override
+    public void deleteCustomer(String id) {
+        if (repo.existsById(id)) {
+            repo.deleteById(id);
+        } else {
+            throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
+        }
+
+    }
+
+    @Override
+    public void updateCustomer(CustomerDTO dto) {
+        if (repo.existsById(dto.getCustID())) {
+            repo.save(mapper.map(dto, Customer.class));
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+        }
+
+    }
 }
