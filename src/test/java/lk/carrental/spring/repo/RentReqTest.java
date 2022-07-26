@@ -30,11 +30,11 @@ public class RentReqTest {
 
     @Test
     public void saveUser() {
-        Vehicle id = vehicleRepo.getReferenceById("V001");
-        Driver d002 = driverRepo.getReferenceById("D002");
-        Customer c002 = customerRepo.getReferenceById("C002");
+        Vehicle id = vehicleRepo.getReferenceById("V002");
+        Driver d002 = driverRepo.getReferenceById("D001");
+        Customer c002 = customerRepo.getReferenceById("C003");
 
-        RentReq rentReq=new RentReq("R001","23","2","33","12","Yes","Pending",2000,id,d002,c002);
+        RentReq rentReq=new RentReq("R001","23","2","33","12","Yes","Pending","none",id,d002,c002);
         rentReqRepo.save(rentReq);
 
     }
@@ -58,7 +58,7 @@ public class RentReqTest {
             Vehicle id = vehicleRepo.getReferenceById("V001");
             Driver d002 = driverRepo.getReferenceById("D002");
             Customer c002 = customerRepo.getReferenceById("C002");
-            RentReq rentReq=new RentReq("R001","100","2","33","12","Yes","Pending",2000,id,d002,c002);
+            RentReq rentReq=new RentReq("R001","100","2","33","12","Yes","Pending","none",id,d002,c002);
             rentReqRepo.save(rentReq);
         }else{
             throw new RuntimeException("No Such Diver To Update");
