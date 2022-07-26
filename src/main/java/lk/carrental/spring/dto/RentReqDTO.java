@@ -20,6 +20,8 @@ public class RentReqDTO {
     private String returnDate;
     private String returnTime;
     private String driverNeed;
+    private String reqConfirm;
+    private double price;
     private Vehicle vehicle;
     private Driver driver;
     private Customer customer;

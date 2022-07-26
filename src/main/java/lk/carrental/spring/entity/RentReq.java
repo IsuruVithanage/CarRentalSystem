@@ -20,8 +20,11 @@ public class RentReq {
     private String returnDate;
     private String returnTime;
     private String driverNeed;
+    private String reqConfirm;
+    private double price;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "vehicleID",referencedColumnName = "vehicleID",nullable = false)
     private Vehicle vehicle;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
