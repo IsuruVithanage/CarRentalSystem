@@ -1,8 +1,6 @@
 package lk.carrental.spring.repo;
 
-
 import lk.carrental.spring.config.JPAConfig;
-import lk.carrental.spring.entity.Customer;
 import lk.carrental.spring.entity.Driver;
 import lk.carrental.spring.entity.User;
 import org.junit.jupiter.api.Test;
@@ -18,36 +16,36 @@ import java.util.List;
 @ContextConfiguration(classes = {JPAConfig.class})
 @ExtendWith(SpringExtension.class)
 //@Transactional
-public class DriverRepoTest {
+public class UserRepoTest {
 
     @Autowired
-    DriverRepo driverRepo;
+    UserRepo userRepo;
 
     @Test
-    public void saveDriver() {
-        Driver driver=new Driver("D002","Nuwan","Galle","23332","323","12212","available",new User("UD002","Nuwan","34nd","dr"));
-        driverRepo.save(driver);
+    public void saveUser() {
+        User user=new User("UA001","Kusum","23hnd","ad");
+        userRepo.save(user);
 
     }
 
     @Test
-    public void getAllDrivers() {
-        List<Driver> all = driverRepo.findAll();
-        for (Driver driver : all) {
-            System.out.println(driver.toString());
+    public void getAllUsers() {
+        List<User> all = userRepo.findAll();
+        for (User user : all) {
+            System.out.println(user.toString());
         }
     }
 
     @Test
-    public void deleteDriver() {
-        driverRepo.deleteById("D001");
+    public void deleteUser() {
+        userRepo.deleteById("UD002");
     }
 
     @Test
-    public void updateDriver(){
-        if (driverRepo.existsById("D002")) {
-            Driver driver=new Driver("D002","Saman","Galle","23332","323","12212","available",new User("UD002","Nuwan","34nd","dr"));
-            driverRepo.save(driver);
+    public void updateUser(){
+        if (userRepo.existsById("UA001")) {
+            User user=new User("UA001","Kusum123","23hnd","ad");
+            userRepo.save(user);
         }else{
             throw new RuntimeException("No Such Diver To Update");
         }

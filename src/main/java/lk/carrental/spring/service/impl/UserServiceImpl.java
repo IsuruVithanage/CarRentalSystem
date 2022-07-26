@@ -1,12 +1,12 @@
 package lk.carrental.spring.service.impl;
 
-import lk.carrental.spring.dto.CustomerDTO;
 import lk.carrental.spring.dto.DriverDTO;
-import lk.carrental.spring.entity.Customer;
+import lk.carrental.spring.dto.UserDTO;
 import lk.carrental.spring.entity.Driver;
-import lk.carrental.spring.repo.CustomerRepo;
+import lk.carrental.spring.entity.User;
 import lk.carrental.spring.repo.DriverRepo;
-import lk.carrental.spring.service.DriverService;
+import lk.carrental.spring.repo.UserRepo;
+import lk.carrental.spring.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +17,17 @@ import java.util.List;
 
 @Service
 @Transactional
-public class DriverServiceImpl implements DriverService {
+public class UserServiceImpl implements UserService {
     @Autowired
-    private DriverRepo repo;
+    private UserRepo repo;
 
     @Autowired
     private ModelMapper mapper;
 
     @Override
-    public void saveDriver(DriverDTO dto) {
-        if (!repo.existsById(dto.getDriverID())) {
-            repo.save(mapper.map(dto, Driver.class));
+    public void saveUser(UserDTO dto) {
+        if (!repo.existsById(dto.getUserID())) {
+            repo.save(mapper.map(dto, User.class));
         } else {
             throw new RuntimeException("Driver Already Exist..!");
         }
@@ -35,13 +35,13 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public List<DriverDTO> getAllDrivers() {
-        return mapper.map(repo.findAll(), new TypeToken<List<DriverDTO>>() {
+    public List<UserDTO> getAllUsers() {
+        return mapper.map(repo.findAll(), new TypeToken<List<UserDTO>>() {
         }.getType());
     }
 
     @Override
-    public void deleteDriver(String id) {
+    public void deleteUser(String id) {
         if (repo.existsById(id)) {
             repo.deleteById(id);
         } else {
@@ -51,12 +51,13 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public void updateDriver(DriverDTO dto) {
-        if (repo.existsById(dto.getDriverID())) {
-            repo.save(mapper.map(dto, Driver.class));
+    public void updateUser(UserDTO dto) {
+        if (repo.existsById(dto.getUserID())) {
+            repo.save(mapper.map(dto, User.class));
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
 
     }
+
 }

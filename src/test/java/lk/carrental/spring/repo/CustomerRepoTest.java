@@ -22,8 +22,8 @@ public class CustomerRepoTest {
 
     @Test
     public void saveCustomer() {
-        Customer customer1 = new Customer("C002", "Isuru", "Panadura", "ema", "123sds", "1233232",
-                "232323", new User("UC002", "Isuru", "1234", "Cust"));
+        Customer customer1 = new Customer("C003", "Isuru", "Panadura", "ema", "123sds", "1233232",
+                "232323", new User("UC003", "Isuru", "1234", "Cust"));
         customerRepo.save(customer1);
 
     }
