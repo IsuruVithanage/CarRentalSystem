@@ -60,4 +60,15 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public String generateUserID() {
+        User top = repo.findTopByOrderByUserIDDesc();
+        if(top!=null){
+            Integer index = Integer.parseInt(top.getUserID().split("-")[1]);
+            ++index;
+            return index<10 ? "U-00"+index : index<100 ? "U-0"+index :"U-"+index;
+        }
+        return "U-001";
+    }
+
 }

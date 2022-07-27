@@ -39,4 +39,15 @@ public class PaymentServiceImpl implements PaymentService {
         return mapper.map(repo.findAll(), new TypeToken<List<PaymentDTO>>() {
         }.getType());
     }
+
+    @Override
+    public String generatePaymentID() {
+        Payment top = repo.findTopByOrderByPaymentIDDesc();
+        if(top!=null){
+            Integer index = Integer.parseInt(top.getPaymentID().split("-")[1]);
+            ++index;
+            return index<10 ? "P-00"+index : index<100 ? "P-0"+index :"P-"+index;
+        }
+        return "P-001";
+    }
 }

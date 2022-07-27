@@ -15,6 +15,7 @@ import javax.persistence.*;
 public class Payment {
     @Id
     private String paymentID;
+    private String date;
     private double milage;
     private double price;
     private double damagecost;

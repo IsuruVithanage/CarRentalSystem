@@ -41,4 +41,9 @@ public class UserController {
         return new ResponseUtil(200,"Deleted",null);
     }
 
+    @GetMapping(path = "/GenerateUserID",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateUserID() {
+        return new ResponseUtil(200,"Ok",userService.generateUserID());
+    }
+
 }

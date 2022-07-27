@@ -9,4 +9,5 @@ public interface PaymentService {
     void savePayment(PaymentDTO dto);
 
     List<PaymentDTO> getAllPayments();
+    String generatePaymentID();
 }

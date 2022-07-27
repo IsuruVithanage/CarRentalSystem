@@ -43,4 +43,9 @@ public class RentReqController {
         return new ResponseUtil(200,"Deleted",null);
     }
 
+    @GetMapping(path = "/GenerateRentReqID",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateRentReqID() {
+        return new ResponseUtil(200,"Ok",rentReqService.generateRentReqID());
+    }
+
 }

@@ -41,4 +41,9 @@ public class CustomerController {
         return new ResponseUtil(200,"Deleted",null);
     }
 
+    @GetMapping(path = "/GenerateCustID",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateCustID() {
+        return new ResponseUtil(200,"Ok",customerService.generateCustID());
+    }
+
 }

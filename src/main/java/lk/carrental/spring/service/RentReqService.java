@@ -12,4 +12,5 @@ public interface RentReqService {
 
     void deleteRentReq(String id);
     void updateRentReq(RentReqDTO dto);
+    String generateRentReqID();
 }

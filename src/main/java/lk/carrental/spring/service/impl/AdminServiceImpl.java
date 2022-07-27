@@ -30,4 +30,15 @@ public class AdminServiceImpl implements AdminService {
         }
 
     }
+
+    @Override
+    public String generateAdminID() {
+        Admin top = repo.findTopByOrderByAdminIDDesc();
+        if(top!=null){
+            Integer index = Integer.parseInt(top.getAdminID().split("-")[1]);
+            ++index;
+            return index<10 ? "A-00"+index : index<100 ? "A-0"+index :"A-"+index;
+        }
+        return "A-001";
+    }
 }

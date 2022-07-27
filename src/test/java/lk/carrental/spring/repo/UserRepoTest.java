@@ -23,7 +23,7 @@ public class UserRepoTest {
 
     @Test
     public void saveUser() {
-        User user=new User("UA001","Kusum","23hnd","ad");
+        User user=new User("UC-001","Kusum","23hnd","ad");
         userRepo.save(user);
 
     }

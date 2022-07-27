@@ -12,4 +12,5 @@ public interface VehicleService {
 
     void deleteVehicle(String id);
     void updateVehicle(VehicleDTO dto);
+    String generateVehicleID();
 }

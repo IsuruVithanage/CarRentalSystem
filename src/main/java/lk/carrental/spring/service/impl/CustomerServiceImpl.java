@@ -58,4 +58,15 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
     }
+
+    @Override
+    public String generateCustID() {
+        Customer top = repo.findTopByOrderByCustIDDesc();
+        if(top!=null){
+            Integer index = Integer.parseInt(top.getCustID().split("-")[1]);
+            ++index;
+            return index<10 ? "C-00"+index : index<100 ? "C-0"+index :"C-"+index;
+        }
+        return "C-001";
+    }
 }

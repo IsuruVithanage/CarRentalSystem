@@ -2,6 +2,7 @@ package lk.carrental.spring.service.impl;
 
 import lk.carrental.spring.dto.UserDTO;
 import lk.carrental.spring.dto.VehicleDTO;
+import lk.carrental.spring.entity.Driver;
 import lk.carrental.spring.entity.User;
 import lk.carrental.spring.entity.Vehicle;
 import lk.carrental.spring.repo.UserRepo;
@@ -59,5 +60,16 @@ public class VehicleServiceImpl implements VehicleService {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
 
+    }
+
+    @Override
+    public String generateVehicleID() {
+        Vehicle top = repo.findTopByOrderByVehicleIDDesc();
+        if(top!=null){
+            Integer index = Integer.parseInt(top.getVehicleID().split("-")[1]);
+            ++index;
+            return index<10 ? "V-00"+index : index<100 ? "V-0"+index :"V-"+index;
+        }
+        return "V-001";
     }
 }

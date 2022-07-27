@@ -26,4 +26,9 @@ public class AdminController {
         return new ResponseUtil(200,"Save",null);
     }
 
+    @GetMapping(path = "/GenerateAdminID",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateAdminID() {
+        return new ResponseUtil(200,"Ok",adminService.generateAdminID());
+    }
+
 }

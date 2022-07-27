@@ -40,4 +40,9 @@ public class VehicleController {
         vehicleService.deleteVehicle(id);
         return new ResponseUtil(200,"Deleted",null);
     }
+
+    @GetMapping(path = "/GenerateVehicleID",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateVehicleID() {
+        return new ResponseUtil(200,"Ok",vehicleService.generateVehicleID());
+    }
 }

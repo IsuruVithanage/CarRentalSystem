@@ -2,6 +2,7 @@ package lk.carrental.spring.service.impl;
 
 import lk.carrental.spring.dto.RentReqDTO;
 import lk.carrental.spring.dto.VehicleDTO;
+import lk.carrental.spring.entity.Driver;
 import lk.carrental.spring.entity.RentReq;
 import lk.carrental.spring.entity.Vehicle;
 import lk.carrental.spring.repo.RentReqRepo;
@@ -58,6 +59,17 @@ public class RentReqServiceImpl implements RentReqService {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
 
+    }
+
+    @Override
+    public String generateRentReqID() {
+        RentReq top = repo.findTopByOrderByRentIDDesc();
+        if(top!=null){
+            Integer index = Integer.parseInt(top.getRentID().split("-")[1]);
+            ++index;
+            return index<10 ? "R-00"+index : index<100 ? "R-0"+index :"R-"+index;
+        }
+        return "R-001";
     }
 
 }

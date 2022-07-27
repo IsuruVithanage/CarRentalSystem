@@ -11,7 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("driver")
+@RequestMapping("payment")
 @CrossOrigin
 public class PaymentController {
     @Autowired
@@ -28,6 +28,11 @@ public class PaymentController {
     public ResponseUtil savePayment(@ModelAttribute PaymentDTO paymentDTO) {
         paymentService.savePayment(paymentDTO);
         return new ResponseUtil(200, "Save", null);
+    }
+
+    @GetMapping(path = "/GeneratePaymentID",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generatePaymentID() {
+        return new ResponseUtil(200,"Ok",paymentService.generatePaymentID());
     }
 
 }

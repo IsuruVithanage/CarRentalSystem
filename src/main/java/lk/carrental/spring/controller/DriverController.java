@@ -41,4 +41,9 @@ public class DriverController {
         driverService.deleteDriver(id);
         return new ResponseUtil(200,"Deleted",null);
     }
+
+    @GetMapping(path = "/GenerateDriverID",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateDriverID() {
+        return new ResponseUtil(200,"Ok",driverService.generateDriverID());
+    }
 }

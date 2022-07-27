@@ -59,4 +59,15 @@ public class DriverServiceImpl implements DriverService {
         }
 
     }
+
+    @Override
+    public String generateDriverID() {
+        Driver top = repo.findTopByOrderByDriverIDDesc();
+        if(top!=null){
+            Integer index = Integer.parseInt(top.getDriverID().split("-")[1]);
+            ++index;
+            return index<10 ? "D-00"+index : index<100 ? "D-0"+index :"D-"+index;
+        }
+        return "D-001";
+    }
 }

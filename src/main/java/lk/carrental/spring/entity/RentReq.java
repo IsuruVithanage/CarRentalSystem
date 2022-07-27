@@ -31,7 +31,7 @@ public class RentReq {
     @JoinColumn(name = "driverID",referencedColumnName = "driverID",nullable = false)
     private Driver driver;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "customerID",referencedColumnName = "custID",nullable = false)
     private Customer customer;
 }

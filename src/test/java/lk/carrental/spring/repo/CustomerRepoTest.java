@@ -22,7 +22,7 @@ public class CustomerRepoTest {
 
     @Test
     public void saveCustomer() {
-        Customer customer1 = new Customer("C003", "Isuru", "Panadura", "ema", "123sds", "1233232",
+        Customer customer1 = new Customer("C-001", "Isuru", "Panadura", "ema", "123sds", "1233232",
                 "232323", new User("UC003", "Isuru", "1234", "Cust"));
         customerRepo.save(customer1);
 
@@ -37,8 +37,19 @@ public class CustomerRepoTest {
     }
 
     @Test
+    public void generateid() {
+        Customer top = customerRepo.findTopByOrderByCustIDDesc();
+        if(top!=null){
+            Integer index = Integer.parseInt(top.getCustID().split("-")[1]);
+            ++index;
+            System.out.println(index<10 ? "C-00"+index : index<100 ? "O-0"+index :"O-"+index);
+        }
+        System.out.println("C-001");
+    }
+
+    @Test
     public void deleteCustomer() {
-        customerRepo.deleteById("C001");
+        customerRepo.deleteById("C-001");
     }
 
     @Test
