@@ -25,7 +25,7 @@ public class DriverRepoTest {
 
     @Test
     public void saveDriver() {
-        Driver driver=new Driver("D-001","Nuwan","Galle","23332","323","12212","available",new User("UD002","Nuwan","34nd","dr"));
+        Driver driver=new Driver("D-001","Nuwan","Galle","23332","323","12212","available",new User("U-002","Nuwan","34nd","dr"));
         driverRepo.save(driver);
 
     }
@@ -40,13 +40,13 @@ public class DriverRepoTest {
 
     @Test
     public void deleteDriver() {
-        driverRepo.deleteById("D001");
+        driverRepo.deleteById("D-001");
     }
 
     @Test
     public void updateDriver(){
-        if (driverRepo.existsById("D002")) {
-            Driver driver=new Driver("D002","Saman","Galle","23332","323","12212","available",new User("UD002","Nuwan","34nd","dr"));
+        if (driverRepo.existsById("D-001")) {
+            Driver driver=new Driver("D-001","Kusum","Galle","23332","323","12212","available",new User("UD002","Nuwan","34nd","dr"));
             driverRepo.save(driver);
         }else{
             throw new RuntimeException("No Such Diver To Update");

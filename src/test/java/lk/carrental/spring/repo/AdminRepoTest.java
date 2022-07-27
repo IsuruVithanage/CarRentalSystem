@@ -21,7 +21,7 @@ public class AdminRepoTest {
 
     @Test
     public void saveAdmin() {
-        Admin admin = new Admin("A001","Nimal","emsd","12223",new User("UA001","Nimal","232323","ad"));
+        Admin admin = new Admin("A-003","Nimal","emsd","12223",new User("U-005","Nimal","232323","ad"));
         adminRepo.save(admin);
 
     }

@@ -22,9 +22,9 @@ public class CustomerController {
         return new ResponseUtil(200,"Ok",customerService.getAllCustomers());
     }
 
-    @ResponseStatus(HttpStatus.CREATED) //201
+    /*@ResponseStatus(HttpStatus.CREATED) *///201
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO customer) {
+    public ResponseUtil saveCustomer(@RequestBody CustomerDTO customer) {
         customerService.saveCustomer(customer);
         return new ResponseUtil(200,"Save",null);
     }

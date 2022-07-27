@@ -23,15 +23,15 @@ public class RentReq {
     private String reqConfirm;
     private String payment;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "vehicleID",referencedColumnName = "vehicleID",nullable = false)
     private Vehicle vehicle;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "driverID",referencedColumnName = "driverID",nullable = false)
     private Driver driver;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH})
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "customerID",referencedColumnName = "custID",nullable = false)
     private Customer customer;
 }

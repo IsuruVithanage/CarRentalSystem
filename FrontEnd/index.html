@@ -150,7 +150,7 @@
 
         /*-------------------------------------*/
 
-        #hdiv, #ldiv, #rdiv, #addiv {
+        #hdiv, #ldiv, #rdiv, #addiv, #radiv, #rddiv, #vdiv {
             width: 700px;
             height: 400px;
             background-color: rgba(66, 64, 64, 0.83);
@@ -218,6 +218,34 @@
 
         }
 
+        #btnVehiclereg {
+            position: absolute;
+            top: 490px;
+            left: 310px;
+            width: 170px;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+            background-color: orange;
+            font-family: Arial;
+            border-radius: 10px;
+
+
+        }
+
+        #btnadminreg{
+            position: absolute;
+            top: 490px;
+            left: 310px;
+            width: 170px;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+            background-color: orange;
+            font-family: Arial;
+            border-radius: 10px;
+        }
+
         #btnhserach {
             position: absolute;
             top: 310px;
@@ -231,6 +259,44 @@
             border-radius: 10px;
 
 
+        }
+
+        #btnhserach {
+            position: absolute;
+            top: 310px;
+            left: 260px;
+            width: 170px;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+            background-color: orange;
+            font-family: Arial;
+            border-radius: 10px;
+
+
+        }
+
+        #btndriverreg {
+            position: absolute;
+            top: 490px;
+            left: 310px;
+            width: 170px;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+            background-color: orange;
+            font-family: Arial;
+            border-radius: 10px;
+
+
+        }
+
+        #btnadminreg:hover {
+            background-color: #d07001;
+        }
+
+        #btndriverreg:hover {
+            background-color: #d07001;
         }
 
         #btnBook:hover {
@@ -351,6 +417,27 @@
             background-image: url("assets/images/bgcar3.JPG");
             background-size: cover;
 
+        }
+
+        #mra{
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
+        }
+
+        #mrd{
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
+        }
+
+        #mrv{
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
         }
 
 
@@ -791,6 +878,7 @@
                    aria-describedby="emailHelp" style="height: 45px; width: 300px; font-size: 20px"
                    placeholder="UserName">
         </div>
+
         <div style="position: absolute; top: 170px; left: 400px">
             <label style="color: white; font-size: 20px">Password</label>
             <input type="password" class="form-control" id="rpassword"
@@ -799,73 +887,308 @@
         </div>
         <div style="position: absolute; top: 80px; left: 80px">
             <label style="color: white; font-size: 20px">Full Name</label>
-            <input type="text" class="form-control" id="custName"
+            <input type="text" class="form-control" id="rcustName"
                    aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
                    placeholder="Name">
         </div>
         <div style="position: absolute; top: 170px; left: 80px">
             <label style="color: white; font-size: 20px">Address</label>
-            <input type="text" class="form-control" id="custAddress"
+            <input type="text" class="form-control" id="rcustAddress"
                    aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
                    placeholder="Address">
         </div>
         <div style="position: absolute; top: 260px; left: 80px">
             <label style="color: white; font-size: 20px">Contact</label>
-            <input type="text" class="form-control" id="custContact"
+            <input type="text" class="form-control" id="rcustContact"
                    aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
                    placeholder="Contact">
         </div>
         <div style="position: absolute; top: 350px; left: 80px">
             <label style="color: white; font-size: 20px">Email</label>
-            <input type="text" class="form-control" id="custEmail"
+            <input type="text" class="form-control" id="rcustEmail"
                    aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
                    placeholder="Email">
         </div>
         <div style="position: absolute; top: 260px; left: 400px">
             <label style="color: white; font-size: 20px">License Number</label>
-            <input type="text" class="form-control" id="custlicen"
+            <input type="text" class="form-control" id="rcustlicen"
                    aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
                    placeholder="License Number">
         </div>
         <div style="position: absolute; top: 350px; left: 400px">
             <label style="color: white; font-size: 20px">NIC</label>
-            <input type="text" class="form-control" id="cuntNic"
+            <input type="text" class="form-control" id="rcuntNic"
                    aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
                    placeholder="NIC">
         </div>
-
-        <!--<div style="position: relative; width: 100px; top: 270px; left: 130px">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="rcheckGuest" style="font-size: 20px">
-                <label class="form-check-label" style="color: white; font-size: 20px">
-                    Guest
-                </label>
-            </div>
-
-            <div class="form-check" style="position: absolute; left: 100px; top: 2px">
-                <input class="form-check-input" type="checkbox" value="" id="rcheckCust" style="font-size: 20px">
-                <label class="form-check-label" style="color: white; font-size: 20px">
-                    Customer
-                </label>
-            </div>
-
-            <div class="form-check" style="position: absolute; left: 240px; top: 2px">
-                <input class="form-check-input" type="checkbox" value="" id="rcheckAdmin" style="font-size: 20px">
-                <label class="form-check-label" style="color: white; font-size: 20px">
-                    Admin
-                </label>
-            </div>
-        </div>-->
-        <h1 style="font-size: 22px; color: white; font-family: Calibri; position: absolute; left: 150px; top: 30px">
-            <span class="orange">CustomerID</span> : C001</h1>
-        <h1 style="font-size: 22px; color: white; font-family: Calibri; position: absolute; left: 450px; top: 30px">
-            <span class="orange">UserID</span> : UC001</h1>
+        <h1  style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 150px; top: 30px">
+            CustomerID : <span id="custID" class="text-white">C001</span></h1>
+        <h1 style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 450px; top: 30px">
+            UserID : <span id="userID" class="text-white">U001</span></h1>
 
         <button type="button" id="btnhreg">Register</button>
 
 
     </div>
 
+</main>
+<main id="mra">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li class="home">Home</li>
+                </a>
+                <a href="#">
+                    <li>Places</li>
+                </a>
+                <a href="#foo">
+                    <li>Register</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+
+    <h1 style="text-align: center; color: white; font-size: 70px; padding-top: 20px;">New Admin <span
+            class="orange">Account</span>
+    </h1>
+
+    <div id="radiv" style="width: 800px; height: 600px; top: 140px">
+        <div style="position: absolute; top: 80px; left: 400px">
+            <label style="color: white; font-size: 20px">User Name</label>
+            <input type="text" class="form-control" id="auserName"
+                   aria-describedby="emailHelp" style="height: 45px; width: 300px; font-size: 20px"
+                   placeholder="UserName">
+        </div>
+
+        <div style="position: absolute; top: 170px; left: 400px">
+            <label style="color: white; font-size: 20px">Password</label>
+            <input type="password" class="form-control" id="apassword"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Password">
+        </div>
+        <div style="position: absolute; top: 80px; left: 80px">
+            <label style="color: white; font-size: 20px">Full Name</label>
+            <input type="text" class="form-control" id="adminName"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Name">
+        </div>
+        <div style="position: absolute; top: 170px; left: 80px">
+            <label style="color: white; font-size: 20px">Email</label>
+            <input type="text" class="form-control" id="aemail"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Email">
+        </div>
+        <div style="position: absolute; top: 260px; left: 80px">
+            <label style="color: white; font-size: 20px">Contact</label>
+            <input type="text" class="form-control" id="adminContact"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Contact">
+        </div>
+        <h1  style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 150px; top: 30px">
+            AdminID : <span id="adminID" class="text-white">A001</span></h1>
+        <h1 style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 450px; top: 30px">
+            UserID : <span id="auserID" class="text-white">U001</span></h1>
+
+        <button type="button" id="btnadminreg">Register</button>
+
+
+    </div>
+
+</main>
+<main id="mrd">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li class="home">Home</li>
+                </a>
+                <a href="#">
+                    <li>Places</li>
+                </a>
+                <a href="#foo">
+                    <li>Register</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+
+    <h1 style="text-align: center; color: white; font-size: 70px; padding-top: 20px;">Register New <span
+            class="orange">Driver</span>
+    </h1>
+
+    <div id="rddiv" style="width: 800px; height: 600px; top: 140px">
+        <div style="position: absolute; top: 80px; left: 400px">
+            <label style="color: white; font-size: 20px">User Name</label>
+            <input type="text" class="form-control" id="duserName"
+                   aria-describedby="emailHelp" style="height: 45px; width: 300px; font-size: 20px"
+                   placeholder="UserName">
+        </div>
+
+        <div style="position: absolute; top: 170px; left: 400px">
+            <label style="color: white; font-size: 20px">Password</label>
+            <input type="password" class="form-control" id="dpassword"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Password">
+        </div>
+        <div style="position: absolute; top: 80px; left: 80px">
+            <label style="color: white; font-size: 20px">Full Name</label>
+            <input type="text" class="form-control" id="driverName"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Name">
+        </div>
+        <div style="position: absolute; top: 170px; left: 80px">
+            <label style="color: white; font-size: 20px">Address</label>
+            <input type="text" class="form-control" id="driverAddress"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Address">
+        </div>
+        <div style="position: absolute; top: 260px; left: 80px">
+            <label style="color: white; font-size: 20px">Contact</label>
+            <input type="text" class="form-control" id="dContact"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Contact">
+        </div>
+        <div style="position: absolute; top: 350px; left: 80px">
+            <label style="color: white; font-size: 20px">NIC</label>
+            <input type="text" class="form-control" id="driverNic"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="NIC">
+        </div>
+        <div style="position: absolute; top: 260px; left: 400px">
+            <label style="color: white; font-size: 20px">License Number</label>
+            <input type="text" class="form-control" id="driverlicen"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="License Number">
+        </div>
+        <h1  style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 150px; top: 30px">
+            DriverID : <span id="driverID" class="text-white">D001</span></h1>
+        <h1 style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 450px; top: 30px">
+            UserID : <span id="duserID" class="text-white">U001</span></h1>
+
+        <button type="button" id="btndriverreg">Register</button>
+
+
+    </div>
+
+</main>
+<main id="mrv">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li class="home">Home</li>
+                </a>
+                <a href="#">
+                    <li>Places</li>
+                </a>
+                <a href="#foo">
+                    <li>Register</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+
+    <h1 style="text-align: center; color: white; font-size: 70px; padding-top: 20px;">Vehicle <span
+            class="orange">Registration</span>
+    </h1>
+
+    <div id="vdiv" style="width: 800px; height: 600px; top: 140px">
+        <div style="position: absolute; top: 70px; left: 400px">
+            <label style="color: white; font-size: 15px">Transmission</label>
+            <select id="trans" class="form-select" aria-label="Default select example" style="height: 40px; width: 300px; font-size: 15px">
+                <option selected>Transmission</option>
+                <option>Auto</option>
+                <option>Manual</option>
+            </select>
+        </div>
+
+        <div style="position: absolute; top: 150px; left: 400px">
+            <label style="color: white; font-size: 15px">Passenger Count</label>
+            <input type="text" class="form-control" id="passengerNo"
+                   aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
+                   placeholder="Passengers">
+        </div>
+        <div style="position: absolute; top: 70px; left: 80px">
+            <label style="color: white; font-size: 15px">Brand</label>
+            <input type="text" class="form-control" id="brand"
+                   aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
+                   placeholder="Brand">
+        </div>
+        <div style="position: absolute; top: 150px; left: 80px">
+            <label style="color: white; font-size: 15px">Type</label>
+            <select id="vtype" class="form-select" aria-label="Default select example" style="height: 40px; width: 300px; font-size: 15px">
+                <option selected>Type</option>
+                <option>Car</option>
+                <option>Van</option>
+                <option>Cab</option>
+            </select>
+        </div>
+        <div style="position: absolute; top: 230px; left: 80px">
+            <label style="color: white; font-size: 15px">Fuel Type</label>
+            <select id="futype" class="form-select" aria-label="Default select example" style="height: 40px; width: 300px; font-size: 15px">
+                <option selected>Type</option>
+                <option>Petrol</option>
+                <option>Disel</option>
+            </select>
+        </div>
+        <div style="position: absolute; top: 310px; left: 80px">
+            <label style="color: white; font-size: 15px">Register Number</label>
+            <input type="text" class="form-control" id="regNo"
+                   aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
+                   placeholder="Number">
+        </div>
+        <div style="position: absolute; top: 230px; left: 400px">
+            <label style="color: white; font-size: 15px">Color</label>
+            <input type="text" class="form-control" id="color"
+                   aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
+                   placeholder="Color">
+        </div>
+        <div style="position: absolute; top: 310px; left: 400px">
+            <label style="color: white; font-size: 15px">Extra Milage Cost (1Km)</label>
+            <input type="text" class="form-control" id="extramile"
+                   aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
+                   placeholder="Cost">
+        </div>
+        <div style="position: absolute; top: 390px; left: 80px">
+            <label style="color: white; font-size: 15px">Daily Rent</label>
+            <input type="drop" class="form-control" id="dailyrent"
+                   aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
+                   placeholder="Rent">
+        </div>
+        <div style="position: absolute; top: 390px; left: 400px">
+            <label style="color: white; font-size: 15px">Monthly Rent</label>
+            <input type="text" class="form-control" id="monthlyRent"
+                   aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
+                   placeholder="Rent">
+        </div>
+        <div style="position: absolute; top: 610px; left: 400px">
+            <label style="color: white; font-size: 15px">NIC</label>
+            <input type="text" class="form-control" id="rcuntNic"
+                   aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
+                   placeholder="NIC">
+        </div>
+        <h1  style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 150px; top: 30px">
+            CustomerID : <span id="vehicleID" class="text-white">C001</span></h1>
+        <h1 style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 450px; top: 30px">
+            UserID : <span id="vuserID" class="text-white">U001</span></h1>
+
+        <button type="button" id="btnVehiclereg">Register</button>
+
+
+    </div>
 </main>
 <main id="ma">
     <header>
@@ -1053,6 +1376,10 @@
 <script src="assets/jQuerry/jquery-3.6.0.min.js"></script>
 <script src="assets/sweetalert.min.js"></script>
 <script src="https://kit.fontawesome.com/adedce74cb.js" crossorigin="anonymous"></script>
+<script src="controllers/CustomerController.js"></script>
+<script src="controllers/UserController.js"></script>
+<script src="controllers/AdminController.js"></script>
+<script src="controllers/DriverController.js"></script>
 <script>
     var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
@@ -1078,13 +1405,21 @@
     });
 </script>
 <script>
+
     $("#ml").css("display", "none");
     $("#mh").css("display", "none");
     $("#mb").css("display", "none");
     $("#mcar").css("display", "none");
     $("#md").css("display", "none");
-    $("#mr").css("display", "block");
+    $("#mr").css("display", "none");
+    $("#mra").css("display", "none");
+    $("#mrd").css("display", "none");
+    $("#mrv").css("display", "block");
     $("#ma").css("display", "none");
+    genarateCustID();
+    genarateAdminID();
+    genarateUserID();
+    genarateDriverID();
 
     $("#btnhserach").click(function () {
         $("#mh").css("display", "none");

@@ -30,11 +30,11 @@ public class RentReqTest {
 
     @Test
     public void saveUser() {
-        Vehicle id = vehicleRepo.getReferenceById("V001");
-        Driver d002 = driverRepo.getReferenceById("D001");
-        Customer c002 = customerRepo.getReferenceById("C001");
+        Vehicle id = vehicleRepo.getReferenceById("V-001");
+        Driver d002 = driverRepo.getReferenceById("D-001");
+        Customer c002 = customerRepo.getReferenceById("C-001");
 
-        RentReq rentReq=new RentReq("R001","23","2","33","12","Yes","Pending","none",id,d002,c002);
+        RentReq rentReq=new RentReq("R-001","23","2","33","12","Yes","Pending","none",id,d002,c002);
         rentReqRepo.save(rentReq);
 
     }
