@@ -5,12 +5,15 @@ import lk.carrental.spring.dto.VehicleDTO;
 import lk.carrental.spring.entity.Driver;
 import lk.carrental.spring.entity.RentReq;
 import lk.carrental.spring.entity.Vehicle;
+import lk.carrental.spring.repo.DriverRepo;
 import lk.carrental.spring.repo.RentReqRepo;
 import lk.carrental.spring.repo.VehicleRepo;
 import lk.carrental.spring.service.RentReqService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +24,9 @@ import java.util.List;
 public class RentReqServiceImpl implements RentReqService {
     @Autowired
     private RentReqRepo repo;
+
+    @Autowired
+    private DriverRepo driverRepo;
 
     @Autowired
     private ModelMapper mapper;
@@ -76,6 +82,22 @@ public class RentReqServiceImpl implements RentReqService {
     public void confirmReq(String id) {
         if (repo.existsById(id)) {
             repo.confirmReq("Confirmed",id);
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+        }
+    }
+
+    @Override
+    public Driver selectDriver() {
+        PageRequest p = PageRequest.of(0, 1);
+        return repo.selectDriver("Available", p);
+    }
+
+    @Override
+    public void assignDriver(String id) {
+        if (repo.existsById(id)) {
+            Driver driver = repo.selectDriver("Available", PageRequest.of(0, 1));
+            repo.assignDriver(driver,id);
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }

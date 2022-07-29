@@ -48,9 +48,15 @@ public class RentReqController {
         return new ResponseUtil(200,"Ok",rentReqService.generateRentReqID());
     }
 
-    @PutMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    /*@PutMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil confirmReq(@PathVariable String id) {
         rentReqService.confirmReq(id);
+        return new ResponseUtil(200,"Ok",null);
+    }*/
+
+    @PutMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil assignDriver(@PathVariable String id) {
+        rentReqService.assignDriver(id);
         return new ResponseUtil(200,"Ok",null);
     }
 

@@ -1,6 +1,8 @@
 package lk.carrental.spring.repo;
 
+import lk.carrental.spring.entity.Driver;
 import lk.carrental.spring.entity.RentReq;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -13,4 +15,11 @@ public interface RentReqRepo extends JpaRepository<RentReq, String> {
     @Modifying
     @Query(value = "UPDATE RentReq SET reqConfirm=:status WHERE rentID=:id")
     void confirmReq(@Param("status")String status,@Param("id")String id);
+
+    @Query(value = "FROM Driver WHERE availability=:status")
+    Driver selectDriver(@Param("status")String status, Pageable p);
+
+    @Modifying
+    @Query(value = "UPDATE RentReq SET driver=:driver WHERE rentID=:id")
+    void assignDriver(@Param("driver")Driver driver,@Param("id")String id);
 }
