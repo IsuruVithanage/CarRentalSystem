@@ -220,7 +220,7 @@
 
         #btnVehiclereg {
             position: absolute;
-            top: 490px;
+            top: 560px;
             left: 310px;
             width: 170px;
             height: 50px;
@@ -560,6 +560,11 @@
                    aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px; ">
         </div>
 
+        <h1  style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 120px; top: 30px">
+            RentID : <span id="rentID" class="text-white">D001</span></h1>
+        <h1 style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 410px; top: 30px">
+            CustomerID : <span id="custAcID" class="text-white">C-001</span></h1>
+
         <button type="button" id="btnhserach">Search</button>
 
 
@@ -756,6 +761,7 @@
     </div>
     <div id="details">
         <ul style="color: white; font-size: 23px">
+            <li style="color: orange">VehicleID : <span id="vId" class="text-white">V-001</span></li>
             <li><i class="fa-solid fa-car"></i> Brand : Toyota</li>
             <li><i class="fa-brands fa-buromobelexperte"></i> Model : Aqua</li>
             <li><i class="fa-solid fa-gears"></i> Transmission : Automatic</li>
@@ -767,13 +773,13 @@
             <li><i class="fa-solid fa-money-bill-1"></i> Price per extra km : Rs 40</li>
         </ul>
     </div>
-    <p style="position: absolute; font-size: 28px; font-family: fantasy; color: orange; left: 1090px; top: 470px">
+    <p style="position: absolute; font-size: 28px; font-family: fantasy; color: orange; left: 1090px; top: 490px">
         Day</p>
-    <h1 style="position: absolute; font-size: 45px; font-family: fantasy; color: white; left: 1090px; top: 500px">Rs
+    <h1 style="position: absolute; font-size: 45px; font-family: fantasy; color: white; left: 1090px; top: 520px">Rs
         8000</h1>
-    <p style="position: absolute; font-size: 28px; font-family: fantasy; color: orange; left: 1250px; top: 470px">
+    <p style="position: absolute; font-size: 28px; font-family: fantasy; color: orange; left: 1250px; top: 490px">
         Monthly</p>
-    <h1 style="position: absolute; font-size: 45px; font-family: fantasy; color: white; left: 1250px; top: 500px">Rs
+    <h1 style="position: absolute; font-size: 45px; font-family: fantasy; color: white; left: 1250px; top: 520px">Rs
         30000</h1>
     <h1 id="carAvaila">Available</h1>
     <button id="btnBook">Book</button>
@@ -1105,7 +1111,7 @@
             class="orange">Registration</span>
     </h1>
 
-    <div id="vdiv" style="width: 800px; height: 600px; top: 140px">
+    <div id="vdiv" style="width: 800px; height: 630px; top: 140px">
         <div style="position: absolute; top: 70px; left: 400px">
             <label style="color: white; font-size: 15px">Transmission</label>
             <select id="trans" class="form-select" aria-label="Default select example" style="height: 40px; width: 300px; font-size: 15px">
@@ -1174,16 +1180,14 @@
                    aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
                    placeholder="Rent">
         </div>
-        <div style="position: absolute; top: 610px; left: 400px">
-            <label style="color: white; font-size: 15px">NIC</label>
-            <input type="text" class="form-control" id="rcuntNic"
+        <div style="position: absolute; top: 470px; left: 80px">
+            <label style="color: white; font-size: 15px">Free Milage</label>
+            <input type="text" class="form-control" id="FreeMilage"
                    aria-describedby="emailHelp" style="height: 40px; width: 300px; font-size: 15px"
-                   placeholder="NIC">
+                   placeholder="Km">
         </div>
-        <h1  style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 150px; top: 30px">
-            CustomerID : <span id="vehicleID" class="text-white">C001</span></h1>
-        <h1 style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 450px; top: 30px">
-            UserID : <span id="vuserID" class="text-white">U001</span></h1>
+        <h1  style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 310px; top: 30px">
+            VehicleID : <span id="vehicleID" class="text-white">C001</span></h1>
 
         <button type="button" id="btnVehiclereg">Register</button>
 
@@ -1380,6 +1384,13 @@
 <script src="controllers/UserController.js"></script>
 <script src="controllers/AdminController.js"></script>
 <script src="controllers/DriverController.js"></script>
+<script src="controllers/VehicleController.js"></script>
+<script src="controllers/RentReqController.js"></script>
+<script src="model/Customer.js"></script>
+<script src="model/RentReq.js"></script>
+<script src="db.js"></script>
+
+<script src=""></script>
 <script>
     var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
@@ -1407,19 +1418,21 @@
 <script>
 
     $("#ml").css("display", "none");
-    $("#mh").css("display", "none");
+    $("#mh").css("display", "block");
     $("#mb").css("display", "none");
     $("#mcar").css("display", "none");
     $("#md").css("display", "none");
     $("#mr").css("display", "none");
     $("#mra").css("display", "none");
     $("#mrd").css("display", "none");
-    $("#mrv").css("display", "block");
+    $("#mrv").css("display", "none");
     $("#ma").css("display", "none");
     genarateCustID();
     genarateAdminID();
     genarateUserID();
     genarateDriverID();
+    genarateVehicleID();
+    genarateRentID();
 
     $("#btnhserach").click(function () {
         $("#mh").css("display", "none");

@@ -72,4 +72,13 @@ public class RentReqServiceImpl implements RentReqService {
         return "R-001";
     }
 
+    @Override
+    public void confirmReq(String id) {
+        if (repo.existsById(id)) {
+            repo.confirmReq("Confirmed",id);
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+        }
+    }
+
 }

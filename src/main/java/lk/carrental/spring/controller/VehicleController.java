@@ -22,9 +22,8 @@ public class VehicleController {
         return new ResponseUtil(200,"Ok",vehicleService.getAllVehicle());
     }
 
-    @ResponseStatus(HttpStatus.CREATED) //201
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveVehicle(@ModelAttribute VehicleDTO vehicleDTO) {
+    public ResponseUtil saveVehicle(@RequestBody VehicleDTO vehicleDTO) {
         vehicleService.saveVehicle(vehicleDTO);
         return new ResponseUtil(200,"Save",null);
     }

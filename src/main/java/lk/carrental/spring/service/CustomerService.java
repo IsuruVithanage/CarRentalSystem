@@ -9,6 +9,7 @@ public interface CustomerService {
     List<CustomerDTO> getAllCustomers();
     void deleteCustomer(String id);
     void updateCustomer(CustomerDTO dto);
+    CustomerDTO searchCustomer(String id);
     String generateCustID();
 
 }

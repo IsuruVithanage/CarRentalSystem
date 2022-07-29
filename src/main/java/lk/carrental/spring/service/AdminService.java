@@ -6,4 +6,5 @@ import lk.carrental.spring.dto.AdminDTO;
 public interface AdminService {
     void saveAdmin(AdminDTO dto);
     String generateAdminID();
+
 }

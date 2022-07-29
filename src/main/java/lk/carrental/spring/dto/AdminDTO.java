@@ -14,5 +14,5 @@ public class AdminDTO {
     private String name;
     private String email;
     private String contact;
-    private UserDTO userDTO;
+    private UserDTO user;
 }

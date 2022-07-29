@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -50,6 +51,12 @@ public class RentReqTest {
     @Test
     public void deleteRentReq() {
         rentReqRepo.deleteById("R001");
+    }
+
+    @Test
+    @Transactional
+    public void confirmreq() {
+        rentReqRepo.confirmReq("Confirmed","R-001");
     }
 
     @Test

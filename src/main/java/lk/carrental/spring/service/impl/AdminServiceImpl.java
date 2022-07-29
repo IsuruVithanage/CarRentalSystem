@@ -4,19 +4,26 @@ import lk.carrental.spring.dto.AdminDTO;
 import lk.carrental.spring.dto.CustomerDTO;
 import lk.carrental.spring.entity.Admin;
 import lk.carrental.spring.entity.Customer;
+import lk.carrental.spring.entity.RentReq;
 import lk.carrental.spring.repo.AdminRepo;
 import lk.carrental.spring.repo.CustomerRepo;
+import lk.carrental.spring.repo.RentReqRepo;
 import lk.carrental.spring.service.AdminService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminRepo repo;
+
+    @Autowired
+    private RentReqRepo reqRepo;
 
     @Autowired
     private ModelMapper mapper;
@@ -41,4 +48,5 @@ public class AdminServiceImpl implements AdminService {
         }
         return "A-001";
     }
+
 }

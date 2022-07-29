@@ -24,9 +24,9 @@ public class RentReqController {
         return new ResponseUtil(200,"Ok",rentReqService.getAllRentReq());
     }
 
-    @ResponseStatus(HttpStatus.CREATED) //201
+
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveRentReq(@ModelAttribute RentReqDTO rentReqDTO) {
+    public ResponseUtil saveRentReq(@RequestBody RentReqDTO rentReqDTO) {
         rentReqService.saveRentReq(rentReqDTO);
         return new ResponseUtil(200,"Save",null);
     }
@@ -46,6 +46,12 @@ public class RentReqController {
     @GetMapping(path = "/GenerateRentReqID",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil generateRentReqID() {
         return new ResponseUtil(200,"Ok",rentReqService.generateRentReqID());
+    }
+
+    @PutMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil confirmReq(@PathVariable String id) {
+        rentReqService.confirmReq(id);
+        return new ResponseUtil(200,"Ok",null);
     }
 
 }

@@ -21,8 +21,9 @@ public class RentReqDTO {
     private String returnTime;
     private String driverNeed;
     private String reqConfirm;
+    private String payment;
     private double price;
-    private Vehicle vehicle;
-    private Driver driver;
-    private Customer customer;
+    private VehicleDTO vehicle;
+    private DriverDTO driver;
+    private CustomerDTO customer;
 }

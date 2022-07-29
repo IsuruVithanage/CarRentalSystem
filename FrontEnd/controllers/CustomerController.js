@@ -1,7 +1,5 @@
 $("#btnhreg").click(function () {
     saveCustomer();
-
-
 });
 
 
@@ -40,7 +38,7 @@ function saveCustomer() {
         licenseNo: $("#rcustlicen").val(),
         nic: $("#rcuntNic").val(),
         contact: $("#rcustContact").val(),
-        user: userOb
+        user: null
     }
 
     $.ajax({
@@ -56,4 +54,19 @@ function saveCustomer() {
             alert(ob.responseJSON.message);
         }
     });
+
+    //Search Customer
+    function searchCustomer(custID) {
+
+        $.ajax({
+            url: "http://localhost:8080/CarRentalSystem_war/customer/" + custID,
+            method: "GET",
+            success: function (res) {
+                return res.data;
+            },
+            error:function (ob){
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
 }

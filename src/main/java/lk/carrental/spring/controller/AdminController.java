@@ -1,12 +1,9 @@
 package lk.carrental.spring.controller;
 
 import lk.carrental.spring.dto.AdminDTO;
-import lk.carrental.spring.dto.CustomerDTO;
 import lk.carrental.spring.service.AdminService;
-import lk.carrental.spring.service.CustomerService;
 import lk.carrental.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
