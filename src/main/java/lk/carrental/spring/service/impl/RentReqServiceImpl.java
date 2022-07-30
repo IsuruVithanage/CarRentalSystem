@@ -82,9 +82,19 @@ public class RentReqServiceImpl implements RentReqService {
     public void confirmReq(String id) {
         if (repo.existsById(id)) {
             repo.confirmReq("Confirmed",id);
+            System.out.println("confirm");
             if (ifDriverNeed(id)){
                 assignDriver(id);
             }
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+        }
+    }
+
+    @Override
+    public void deniedmReq(String id) {
+        if (repo.existsById(id)) {
+            repo.confirmReq("Denied",id);
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }

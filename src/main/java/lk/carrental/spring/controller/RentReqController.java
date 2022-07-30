@@ -54,6 +54,12 @@ public class RentReqController {
         return new ResponseUtil(200,"Ok",null);
     }
 
+    @PutMapping(path = "denyReq/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deniedReq(@PathVariable String id) {
+        rentReqService.deniedmReq(id);
+        return new ResponseUtil(200,"Ok",null);
+    }
+
     @GetMapping(path = "pendingreq/{status}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getReq(@PathVariable String status) {
         return new ResponseUtil(200,"Ok",rentReqService.getReq(status));

@@ -16,6 +16,7 @@ public interface RentReqService {
     void updateRentReq(RentReqDTO dto);
     String generateRentReqID();
     void confirmReq(String id);
+    void deniedmReq(String id);
     void assignDriver(String id);
     boolean ifDriverNeed(String id);
     List<RentReqDTO> getReq(String status);
