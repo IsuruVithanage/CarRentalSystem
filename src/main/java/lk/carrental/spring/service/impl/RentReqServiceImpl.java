@@ -82,25 +82,35 @@ public class RentReqServiceImpl implements RentReqService {
     public void confirmReq(String id) {
         if (repo.existsById(id)) {
             repo.confirmReq("Confirmed",id);
+            if (ifDriverNeed(id)){
+                assignDriver(id);
+            }
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
     }
 
-    @Override
-    public Driver selectDriver() {
-        PageRequest p = PageRequest.of(0, 1);
-        return repo.selectDriver("Available", p);
-    }
 
     @Override
     public void assignDriver(String id) {
         if (repo.existsById(id)) {
-            Driver driver = repo.selectDriver("Available", PageRequest.of(0, 1));
-            repo.assignDriver(driver,id);
+            List<Driver> available = driverRepo.selectDriver("Available", PageRequest.of(0, 1));
+            repo.assignDriver(available.get(0),id);
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
+    }
+
+    @Override
+    public boolean ifDriverNeed(String id) {
+        String s = repo.ifDriverNeed(id);
+        return s.equals("Yes");
+    }
+
+    @Override
+    public List<RentReqDTO> getReq(String status) {
+        return mapper.map(repo.getReq(status), new TypeToken<List<RentReqDTO>>() {
+        }.getType());
     }
 
 }

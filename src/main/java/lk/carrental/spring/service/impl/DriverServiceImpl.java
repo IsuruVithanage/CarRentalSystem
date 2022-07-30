@@ -10,6 +10,7 @@ import lk.carrental.spring.service.DriverService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -69,5 +70,13 @@ public class DriverServiceImpl implements DriverService {
             return index<10 ? "D-00"+index : index<100 ? "D-0"+index :"D-"+index;
         }
         return "D-001";
+    }
+
+    @Override
+    public List<DriverDTO> selectDriver() {
+        PageRequest p = PageRequest.of(0, 1);
+        return mapper.map(repo.selectDriver("Available",p), new TypeToken<List<DriverDTO>>() {
+        }.getType());
+
     }
 }

@@ -55,7 +55,7 @@ function sendRentReq() {
         pickedTime: reqOb.getPickedTime(),
         returnDate: reqOb.getReturnDate(),
         returnTime: reqOb.getReturnTime(),
-        driverNeed: reqOb.getDriverNeed(),
+        driverNeed: "No",
         reqConfirm: "Pending",
         payment: "No",
         vehicle: vehiclOb,
@@ -69,7 +69,7 @@ function sendRentReq() {
         contentType: "application/json",
         data: JSON.stringify(rentOb),
         success: function (res) {
-            console.log(res.data);
+            console.log(rentOb);
             swal("Success!", "You Request has been sent!", "success");
         },
         error: function (ob) {

@@ -387,6 +387,17 @@
 
         }
 
+        #rtableDive {
+            width: 1300px;
+            height: 600px;
+            position: absolute;
+            left: 220px;
+            top: 200px;
+
+        }
+
+
+
         th, td {
             font-size: 23px;
         }
@@ -438,6 +449,42 @@
             height: 100vh;
             background-image: url("assets/images/bgcar3.JPG");
             background-size: cover;
+        }
+
+        #mreqConfirm {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
+
+        }
+
+        .tcbtn{
+            width: 80px;
+            height: 35px;
+            font-size: 18px;
+            border-radius: 10px;
+            background-color: orange;
+            color: white;
+            font-family: Calibri;
+        }
+
+        .tcbtn:hover{
+            background-color: #db8a00;
+        }
+
+        .tdbtn{
+            width: 80px;
+            height: 35px;
+            font-size: 18px;
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            font-family: Calibri;
+        }
+
+        .tdbtn:hover{
+            background-color: #ce0303;
         }
 
 
@@ -1374,6 +1421,91 @@
     </div>
 
 </main>
+<main id="mreqConfirm">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li class="home">Home</li>
+                </a>
+                <a href="#">
+                    <li>Places</li>
+                </a>
+                <a href="#foo">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+    <h1 style="position:relative; top: 20px; text-align: center; font-size: 60px; color: white">Request <span
+            class="orange">Confirmation</span></h1>
+    <div id="rtableDive">
+        <table class="table" style="background-color: rgba(43,43,43,0.72); color: #ffffff">
+            <thead>
+            <tr>
+                <th scope="col">Rent ID</th>
+                <th scope="col">Picked Date</th>
+                <th scope="col">Picked Time</th>
+                <th scope="col">Return Date</th>
+                <th scope="col">Return Time</th>
+                <th scope="col">Driver Need</th>
+                <th scope="col">Confirm</th>
+                <th scope="col">Deny</th>
+
+            </tr>
+            </thead>
+            <tbody id="mreqConfirmtbl">
+            <!--<tr>
+                <th scope="row">D001</th>
+                <td>03/08/2022</td>
+                <td>7.00 AM</td>
+                <td>10/08/2022</td>
+                <td>10/08/2022</td>
+                <td>No</td>
+                <td><button class="tcbtn">Confirm</button></td>
+                <td><button class="tdbtn">Deny</button></td>
+            </tr>
+            <tr>
+                <th scope="row">D001</th>
+                <td>03/08/2022</td>
+                <td>7.00 AM</td>
+                <td>10/08/2022</td>
+                <td>10/08/2022</td>
+                <td>No</td>
+                <td><button class="tcbtn">Confirm</button></td>
+                <td><button class="tdbtn">Deny</button></td>
+            </tr>
+            <tr>
+                <th scope="row">D001</th>
+                <td>03/08/2022</td>
+                <td>7.00 AM</td>
+                <td>10/08/2022</td>
+                <td>10/08/2022</td>
+                <td>No</td>
+                <td><button class="tcbtn">Confirm</button></td>
+                <td><button class="tdbtn">Deny</button></td>
+            </tr>
+            <tr>
+                <th scope="row">D001</th>
+                <td>03/08/2022</td>
+                <td>7.00 AM</td>
+                <td>10/08/2022</td>
+                <td>10/08/2022</td>
+                <td>No</td>
+                <td><button class="tcbtn">Confirm</button></td>
+                <td><button class="tdbtn">Deny</button></td>
+            </tr>-->
+
+
+            </tbody>
+        </table>
+    </div>
+
+</main>
 
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -1418,7 +1550,7 @@
 <script>
 
     $("#ml").css("display", "none");
-    $("#mh").css("display", "block");
+    $("#mh").css("display", "none");
     $("#mb").css("display", "none");
     $("#mcar").css("display", "none");
     $("#md").css("display", "none");
@@ -1427,6 +1559,7 @@
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
     $("#ma").css("display", "none");
+    $("#mreqConfirm").css("display", "block");
     genarateCustID();
     genarateAdminID();
     genarateUserID();
