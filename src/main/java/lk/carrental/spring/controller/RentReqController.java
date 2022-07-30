@@ -54,8 +54,8 @@ public class RentReqController {
         return new ResponseUtil(200,"Ok",null);
     }
 
-    @GetMapping(params = {"status"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getReq(@RequestParam String status) {
+    @GetMapping(path = "pendingreq/{status}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getReq(@PathVariable String status) {
         return new ResponseUtil(200,"Ok",rentReqService.getReq(status));
     }
 

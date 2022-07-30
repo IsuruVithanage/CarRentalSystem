@@ -1452,6 +1452,7 @@
                 <th scope="col">Picked Time</th>
                 <th scope="col">Return Date</th>
                 <th scope="col">Return Time</th>
+                <th scope="col">Vehicle ID</th>
                 <th scope="col">Driver Need</th>
                 <th scope="col">Confirm</th>
                 <th scope="col">Deny</th>
@@ -1518,6 +1519,7 @@
 <script src="controllers/DriverController.js"></script>
 <script src="controllers/VehicleController.js"></script>
 <script src="controllers/RentReqController.js"></script>
+<script src="controllers/ReqConfirmationController.js"></script>
 <script src="model/Customer.js"></script>
 <script src="model/RentReq.js"></script>
 <script src="db.js"></script>
@@ -1559,6 +1561,7 @@
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
     $("#ma").css("display", "none");
+    getPendingAllReq();
     $("#mreqConfirm").css("display", "block");
     genarateCustID();
     genarateAdminID();
