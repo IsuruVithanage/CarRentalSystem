@@ -396,6 +396,15 @@
 
         }
 
+        #payreqtbl {
+            width: 1600px;
+            height: 600px;
+            position: absolute;
+            left: 50px;
+            top: 200px;
+
+        }
+
 
 
         th, td {
@@ -485,6 +494,23 @@
 
         .tdbtn:hover{
             background-color: #ce0303;
+        }
+
+        #mpayreq {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
+
+        }
+
+        .tbl-wrap{
+            height: 100px;
+            overflow-y: auto;
+        }
+
+        td,th{
+            text-align: center;
         }
 
 
@@ -1443,7 +1469,7 @@
     </header>
     <h1 style="position:relative; top: 20px; text-align: center; font-size: 60px; color: white">Request <span
             class="orange">Confirmation</span></h1>
-    <div id="rtableDive">
+    <div id="rtableDive" class="tbl-wrap">
         <table class="table" style="background-color: rgba(43,43,43,0.72); color: #ffffff">
             <thead>
             <tr>
@@ -1508,6 +1534,51 @@
     </div>
 
 </main>
+<main id="mpayreq">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li class="home">Home</li>
+                </a>
+                <a href="#">
+                    <li>Places</li>
+                </a>
+                <a href="#foo">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+    <h1 style="position:relative; top: 20px; text-align: center; font-size: 60px; color: white">Request <span
+            class="orange">Payment</span></h1>
+    <div id="payreqtbl" class="tbl-wrap">
+        <table class="table" style="background-color: rgba(43,43,43,0.72); color: #ffffff">
+            <thead>
+            <tr>
+                <th scope="col">Rent ID</th>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Picked Date</th>
+                <th scope="col">Picked Time</th>
+                <th scope="col">Return Date</th>
+                <th scope="col">Return Time</th>
+                <th scope="col">Vehicle ID</th>
+                <th scope="col">Driver Need</th>
+                <th scope="col">Payment</th>
+
+            </tr>
+            </thead>
+            <tbody id="tblreqpay">
+
+
+            </tbody>
+        </table>
+    </div>
+</main>
 
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -1563,7 +1634,9 @@
     $("#mrv").css("display", "none");
     $("#ma").css("display", "none");
     getPendingAllReq();
-    $("#mreqConfirm").css("display", "block");
+    $("#mreqConfirm").css("display", "none");
+    getConfirmedgAllReq();
+    $("#mreqpay").css("display", "block");
     genarateCustID();
     genarateAdminID();
     genarateUserID();
