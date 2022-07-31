@@ -22,7 +22,7 @@ function getPendingAllReq() {
                     content: "input",
                 })
                     .then((value) => {
-                        alert(value);
+                        denyReqMessage($(this).closest("tr").find(".nr").text(),value);
                         denyReq($(this).closest("tr").find(".nr").text());
                     });
 
@@ -69,3 +69,24 @@ function denyReq(rentID) {
 
 }
 
+
+function denyReqMessage(rentID,message) {
+    var denyReqOb = {
+        denyReqID: rentID,
+        message: message
+    }
+
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/reqdeny",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(denyReqOb), //You should state request's content type using MIME types
+        success: function (res) {
+            swal("Success!", "You Request has been denied!", "success");
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
+}
