@@ -1668,18 +1668,18 @@
 
         <div style="position: absolute; width: 50px; left: 430px; top: 230px;">
             <h1 style="font-size: 27px; color: orange; font-family: fantasy;">Daily</h1>
-            <h1 style="font-size: 35px; color: white; font-family: fantasy;">8000</h1>
+            <h1 style="font-size: 35px; color: white; font-family: fantasy;" id="dpay">8000</h1>
         </div>
 
         <div style="position: absolute; width: 50px; left: 540px; top: 230px;">
-            <h1 style="font-size: 27px; color: orange; font-family: fantasy;">Monthly</h1>
-            <h1 style="font-size: 35px; color: white; font-family: fantasy;">18000</h1>
+            <h1 style="font-size: 27px; color: orange; font-family: fantasy;" >Monthly</h1>
+            <h1 style="font-size: 35px; color: white; font-family: fantasy;" id="mpay">18000</h1>
         </div>
 
         <h1 style="font-size: 45px; color: orange; font-family: fantasy; position: absolute; left: 420px; top: 345px">Total :</h1>
-        <h1 style="font-size: 55px; color: white; font-family: fantasy; position: absolute; left: 540px; top: 340px">18000</h1>
+        <h1 style="font-size: 55px; color: white; font-family: fantasy; position: absolute; left: 540px; top: 340px" id="fullTotal">18000</h1>
 
-        <h1 style="font-size: 27px; color: orange; font-family: Calibri; position: absolute; left: 150px; top: 30px">
+        <h1 style="font-size: 27px; color: orange; font-family: Calibri; position: absolute; left: 130px; top: 30px">
             Payment ID : <span id="payID" class="text-white">P-001</span></h1>
         <h1 style="font-size: 27px; color: orange; font-family: Calibri; position: absolute; left: 470px; top: 30px">
             Rent ID : <span id="payRentID" class="text-white">R-001</span></h1>
@@ -1702,6 +1702,7 @@
 <script src="controllers/VehicleController.js"></script>
 <script src="controllers/RentReqController.js"></script>
 <script src="controllers/ReqConfirmationController.js"></script>
+<script src="controllers/PaymentController.js"></script>
 <script src="model/Customer.js"></script>
 <script src="model/RentReq.js"></script>
 <script src="db.js"></script>

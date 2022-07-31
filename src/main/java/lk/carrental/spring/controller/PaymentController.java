@@ -23,9 +23,8 @@ public class PaymentController {
         return new ResponseUtil(200, "Ok", paymentService.getAllPayments());
     }
 
-    @ResponseStatus(HttpStatus.CREATED) //201
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil savePayment(@ModelAttribute PaymentDTO paymentDTO) {
+    public ResponseUtil savePayment(@RequestBody PaymentDTO paymentDTO) {
         paymentService.savePayment(paymentDTO);
         return new ResponseUtil(200, "Save", null);
     }
