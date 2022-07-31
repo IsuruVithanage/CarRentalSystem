@@ -1,5 +1,3 @@
-
-
 function getPendingAllReq() {
     $("#mreqConfirmtbl").empty();
     $.ajax({
@@ -7,27 +5,36 @@ function getPendingAllReq() {
         method: "GET",
         success: function (resp) {
             for (const req of resp.data) {
-                $(".tcbtn").click(function () {
-                    confirmReq(req.rentID);
-                    $(this).remove();
-                });
 
-                $(".tdbtn").click(function () {
-                    denyReq(req.rentID);
-                    let rowIndex = this.parentElement.rowIndex;
-                    $("#mreqConfirmtbl").deleteRow(rowIndex);
 
-                });
+                let row = `<tr><td class="nr">${req.rentID}</td><td>${req.customer.custID}</td><td>${req.pickedDate}</td><td>${req.pickedTime}</td><td>${req.returnDate}</td><td>${req.returnTime}</td><td>${req.vehicle.vehicleID}</td><td>${req.driverNeed}</td><td><button class="tcbtn">Confirm</button></td><td><button class="tdbtn">Deny</button></td></tr>`;
 
-                let row = `<tr><td>${req.rentID}</td><td>${req.customer.custID}</td><td>${req.pickedDate}</td><td>${req.pickedTime}</td><td>${req.returnDate}</td><td>${req.returnTime}</td><td>${req.vehicle.vehicleID}</td><td>${req.driverNeed}</td><td><button class="tcbtn">Confirm</button></td><td><button class="tdbtn">Deny</button></td></tr>`;
                 $("#mreqConfirmtbl").append(row);
             }
+
+            $(".tcbtn").click(function () {
+                confirmReq($(this).closest("tr").find(".nr").text());
+                $(this).closest("tr").remove();
+            });
+
+            $(".tdbtn").click(function () {
+                swal("Write something here:", {
+                    content: "input",
+                })
+                    .then((value) => {
+                        alert(value);
+                        denyReq($(this).closest("tr").find(".nr").text());
+                    });
+
+                $(this).closest("tr").remove();
+
+            });
+
         },
         error: function (ob) {
             alert(ob.responseJSON.message);
         }
     });
-
 
 
 }

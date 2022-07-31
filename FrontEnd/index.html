@@ -1591,6 +1591,16 @@
         $("#mcar").css("display", "block");
 
     });
+
+    $("#btnBook").click(function () {
+        $("#mh").css("display", "none");
+        $("#mb").css("display", "none");
+        $("#mcar").css("display", "none");
+
+        $("#mreqConfirm").css("display", "block");
+        getPendingAllReq();
+
+    });
 </script>
 
 </body>
