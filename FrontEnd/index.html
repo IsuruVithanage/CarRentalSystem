@@ -150,7 +150,7 @@
 
         /*-------------------------------------*/
 
-        #hdiv, #ldiv, #rdiv, #addiv, #radiv, #rddiv, #vdiv {
+        #hdiv, #ldiv, #rdiv, #addiv, #radiv, #rddiv, #vdiv, #pdiv {
             width: 700px;
             height: 400px;
             background-color: rgba(66, 64, 64, 0.83);
@@ -291,7 +291,26 @@
 
         }
 
+        #btnPay {
+            position: absolute;
+            top: 490px;
+            left: 310px;
+            width: 170px;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+            background-color: orange;
+            font-family: Arial;
+            border-radius: 10px;
+
+
+        }
+
         #btnadminreg:hover {
+            background-color: #d07001;
+        }
+
+        #btnPay:hover {
             background-color: #d07001;
         }
 
@@ -496,7 +515,7 @@
             background-color: #ce0303;
         }
 
-        #mpayreq {
+        #mconfirmPay {
             width: 100vw;
             height: 100vh;
             background-image: url("assets/images/bgcar3.JPG");
@@ -511,6 +530,14 @@
 
         td,th{
             text-align: center;
+        }
+
+        #mPayment {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
+
         }
 
 
@@ -1534,7 +1561,7 @@
     </div>
 
 </main>
-<main id="mpayreq">
+<main id="mconfirmPay">
     <header>
         <div>
             <div>
@@ -1577,6 +1604,89 @@
 
             </tbody>
         </table>
+    </div>
+</main>
+<main id="mPayment">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li class="home">Home</li>
+                </a>
+                <a href="#">
+                    <li>Places</li>
+                </a>
+                <a href="#foo">
+                    <li>Register</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+
+    <h1 style="text-align: center; color: white; font-size: 70px; padding-top: 20px;">Customer <span
+            class="orange">Payment</span>
+    </h1>
+
+    <div id="pdiv" style="width: 800px; height: 600px; top: 140px">
+        <div style="position: absolute; top: 80px; left: 400px">
+            <label style="color: white; font-size: 20px">Return Date</label>
+            <input type="Date" class="form-control" id="txtrdate"
+                   aria-describedby="emailHelp" style="height: 45px; width: 300px; font-size: 20px">
+        </div>
+
+        <div style="position: absolute; top: 170px; left: 400px">
+            <label style="color: white; font-size: 20px">Password</label>
+            <input type="date" class="form-control" id=""
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Password">
+        </div>
+        <div style="position: absolute; top: 80px; left: 80px">
+            <label style="color: white; font-size: 20px">Picked Date</label>
+            <input type="date" class="form-control" id="txtpdate"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px">
+        </div>
+        <div style="position: absolute; top: 170px; left: 80px">
+            <label style="color: white; font-size: 20px">Total Milage</label>
+            <input type="text" class="form-control" id="totalMilage"
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Km">
+        </div>
+        <div style="position: absolute; top: 260px; left: 80px">
+            <label style="color: white; font-size: 20px">Contact</label>
+            <input type="text" class="form-control" id=""
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Contact">
+        </div>
+        <div style="position: absolute; top: 350px; left: 80px">
+            <label style="color: white; font-size: 20px">Email</label>
+            <input type="text" class="form-control" id=""
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="Email">
+        </div>
+        <div style="position: absolute; top: 260px; left: 400px">
+            <label style="color: white; font-size: 20px">License Number</label>
+            <input type="text" class="form-control" id=""
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="License Number">
+        </div>
+        <div style="position: absolute; top: 350px; left: 400px">
+            <label style="color: white; font-size: 20px">NIC</label>
+            <input type="text" class="form-control" id=""
+                   aria-describedby="emailHelp" style="height: 50px; width: 300px; font-size: 20px"
+                   placeholder="NIC">
+        </div>
+        <h1  style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 150px; top: 30px">
+            Payment ID : <span id="payID" class="text-white">P-001</span></h1>
+        <h1 style="font-size: 22px; color: orange; font-family: Calibri; position: absolute; left: 470px; top: 30px">
+            Rent ID : <span id="payRentID" class="text-white">R-001</span></h1>
+
+        <button type="button" id="btnPay">Pay</button>
+
+
     </div>
 </main>
 
@@ -1633,10 +1743,11 @@
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
     $("#ma").css("display", "none");
-    getPendingAllReq();
+    //getPendingAllReq();
     $("#mreqConfirm").css("display", "none");
-    getConfirmedgAllReq();
-    $("#mreqpay").css("display", "block");
+    //getConfirmedgAllReq();
+    $("#mconfirmPay").css("display", "none");
+    $("#mPayment").css("display", "block");
     genarateCustID();
     genarateAdminID();
     genarateUserID();
@@ -1670,7 +1781,7 @@
         $("#mb").css("display", "none");
         $("#mcar").css("display", "none");
 
-        $("#mreqConfirm").css("display", "block");
+        $("#mreqConfirm").css("display", "none");
         getPendingAllReq();
 
     });
