@@ -3,8 +3,6 @@ $("#btnhreg").click(function () {
 });
 
 
-
-
 function genarateCustID() {
     $.ajax({
         url: "http://localhost:8080/CarRentalSystem_war/customer/GenerateCustID",
@@ -54,19 +52,20 @@ function saveCustomer() {
             alert(ob.responseJSON.message);
         }
     });
+}
 
-    //Search Customer
-    function searchCustomer(custID) {
+//Search Customer
+function searchCustomer(custID) {
 
-        $.ajax({
-            url: "http://localhost:8080/CarRentalSystem_war/customer/" + custID,
-            method: "GET",
-            success: function (res) {
-                return res.data;
-            },
-            error:function (ob){
-                alert(ob.responseJSON.message);
-            }
-        });
-    }
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/customer/" + custID,
+        method: "GET",
+        success: function (res) {
+            return res.data;
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
 }

@@ -21,7 +21,7 @@ public class Payment {
     private double damagecost;
     private double fullamount;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "requestID",referencedColumnName = "rentID",nullable = false)
     private RentReq rentReq;
 

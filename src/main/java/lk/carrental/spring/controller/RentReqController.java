@@ -65,5 +65,10 @@ public class RentReqController {
         return new ResponseUtil(200,"Ok",rentReqService.getReq(status));
     }
 
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchRentReq(@PathVariable String id) {
+        return new ResponseUtil(200,"Ok",rentReqService.searchReq(id));
+    }
+
 
 }

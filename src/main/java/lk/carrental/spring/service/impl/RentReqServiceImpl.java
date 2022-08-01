@@ -1,5 +1,6 @@
 package lk.carrental.spring.service.impl;
 
+import lk.carrental.spring.dto.CustomerDTO;
 import lk.carrental.spring.dto.RentReqDTO;
 import lk.carrental.spring.dto.VehicleDTO;
 import lk.carrental.spring.entity.Driver;
@@ -121,6 +122,15 @@ public class RentReqServiceImpl implements RentReqService {
     public List<RentReqDTO> getReq(String status) {
         return mapper.map(repo.getReq(status), new TypeToken<List<RentReqDTO>>() {
         }.getType());
+    }
+
+    @Override
+    public RentReqDTO searchReq(String id) {
+        if (repo.existsById(id)) {
+            return mapper.map(repo.findById(id).get(), RentReqDTO.class);
+        } else {
+            throw new RuntimeException("No Customer For " + id + " ..!");
+        }
     }
 
 }

@@ -1,5 +1,6 @@
 package lk.carrental.spring.service;
 
+import lk.carrental.spring.dto.CustomerDTO;
 import lk.carrental.spring.dto.RentReqDTO;
 import lk.carrental.spring.dto.VehicleDTO;
 import lk.carrental.spring.entity.Driver;
@@ -20,5 +21,6 @@ public interface RentReqService {
     void assignDriver(String id);
     boolean ifDriverNeed(String id);
     List<RentReqDTO> getReq(String status);
+    RentReqDTO searchReq(String id);
 
 }

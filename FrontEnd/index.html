@@ -1682,7 +1682,7 @@
         <h1 style="font-size: 27px; color: orange; font-family: Calibri; position: absolute; left: 130px; top: 30px">
             Payment ID : <span id="payID" class="text-white">P-001</span></h1>
         <h1 style="font-size: 27px; color: orange; font-family: Calibri; position: absolute; left: 470px; top: 30px">
-            Rent ID : <span id="payRentID" class="text-white">R-001</span></h1>
+            Rent ID : <span id="payRentID" class="text-white">R-005</span></h1>
 
         <button type="button" id="btnPay">Pay</button>
 
@@ -1744,10 +1744,11 @@
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
     $("#ma").css("display", "none");
-    //getPendingAllReq();
+    getPendingAllReq();
     $("#mreqConfirm").css("display", "none");
-    //getConfirmedgAllReq();
+    getConfirmedgAllReq();
     $("#mconfirmPay").css("display", "none");
+    genaratePaymentID();
     $("#mPayment").css("display", "block");
     genarateCustID();
     genarateAdminID();
