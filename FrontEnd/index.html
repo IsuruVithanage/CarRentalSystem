@@ -486,7 +486,7 @@
 
         }
 
-        .tcbtn {
+        .tcbtn , .tpbtn{
             width: 80px;
             height: 35px;
             font-size: 18px;
@@ -497,6 +497,10 @@
         }
 
         .tcbtn:hover {
+            background-color: #db8a00;
+        }
+
+        .tpbtn:hover {
             background-color: #db8a00;
         }
 
@@ -846,6 +850,22 @@
                     <img src="assets/images/aqua4.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
+
+            <div class="form-check" style="position: absolute; left: 760px; top: 450px">
+                <input class="form-check-input" type="checkbox" value="" id="checkday" style="font-size: 25px">
+                <label class="form-check-label" style="color: white; font-size: 25px">
+                    Day
+                </label>
+            </div>
+
+            <div class="form-check" style="position: absolute; left: 870px; top: 450px">
+                <input class="form-check-input" type="checkbox" value="" id="checkmon" style="font-size: 25px">
+                <label class="form-check-label" style="color: white; font-size: 25px">
+                    Monthly
+                </label>
+            </div>
+
+            
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -875,11 +895,11 @@
     <p style="position: absolute; font-size: 28px; font-family: fantasy; color: orange; left: 1090px; top: 490px">
         Day</p>
     <h1 style="position: absolute; font-size: 45px; font-family: fantasy; color: white; left: 1090px; top: 520px">Rs
-        8000</h1>
+        <span id="dcost">8000</span></h1>
     <p style="position: absolute; font-size: 28px; font-family: fantasy; color: orange; left: 1250px; top: 490px">
         Monthly</p>
     <h1 style="position: absolute; font-size: 45px; font-family: fantasy; color: white; left: 1250px; top: 520px">Rs
-        30000</h1>
+        <span id="mcost">30000</span></h1>
     <h1 id="carAvaila">Available</h1>
     <button id="btnBook">Book</button>
 </main>
@@ -1605,7 +1625,7 @@
                 <th scope="col">Return Date</th>
                 <th scope="col">Return Time</th>
                 <th scope="col">Vehicle ID</th>
-                <th scope="col">Driver Need</th>
+                <th scope="col">Cost</th>
                 <th scope="col">Payment</th>
 
             </tr>
@@ -1645,7 +1665,7 @@
     <div id="pdiv" style="width: 800px; height: 600px; top: 140px">
         <div style="position: absolute; top: 110px; left: 400px">
             <label style="color: white; font-size: 20px">Return Date</label>
-            <input type="Date" class="form-control" id="txtrdate"
+            <input type="date" class="form-control" id="txtrdate"
                    aria-describedby="emailHelp" style="height: 45px; width: 300px; font-size: 20px">
         </div>
         <div style="position: absolute; top: 110px; left: 80px">
@@ -1682,7 +1702,7 @@
         <h1 style="font-size: 27px; color: orange; font-family: Calibri; position: absolute; left: 130px; top: 30px">
             Payment ID : <span id="payID" class="text-white">P-001</span></h1>
         <h1 style="font-size: 27px; color: orange; font-family: Calibri; position: absolute; left: 470px; top: 30px">
-            Rent ID : <span id="payRentID" class="text-white">R-005</span></h1>
+            Rent ID : <span id="payRentID" class="text-white">R-003</span></h1>
 
         <button type="button" id="btnPay">Pay</button>
 
@@ -1747,9 +1767,9 @@
     getPendingAllReq();
     $("#mreqConfirm").css("display", "none");
     getConfirmedgAllReq();
-    $("#mconfirmPay").css("display", "none");
+    $("#mconfirmPay").css("display", "block");
     genaratePaymentID();
-    $("#mPayment").css("display", "block");
+    $("#mPayment").css("display", "none");
     genarateCustID();
     genarateAdminID();
     genarateUserID();

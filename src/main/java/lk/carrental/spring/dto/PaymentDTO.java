@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 @ToString
 public class PaymentDTO {
     private String paymentID;
+    private String date;
     private double milage;
     private double price;
     private double damagecost;

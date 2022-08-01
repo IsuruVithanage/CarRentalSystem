@@ -1,5 +1,6 @@
 package lk.carrental.spring.service.impl;
 
+import lk.carrental.spring.dto.CustomerDTO;
 import lk.carrental.spring.dto.UserDTO;
 import lk.carrental.spring.dto.VehicleDTO;
 import lk.carrental.spring.entity.Driver;
@@ -71,5 +72,14 @@ public class VehicleServiceImpl implements VehicleService {
             return index<10 ? "V-00"+index : index<100 ? "V-0"+index :"V-"+index;
         }
         return "V-001";
+    }
+
+    @Override
+    public VehicleDTO searchVehicle(String id) {
+        if (repo.existsById(id)) {
+            return mapper.map(repo.findById(id).get(), VehicleDTO.class);
+        } else {
+            throw new RuntimeException("No Customer For " + id + " ..!");
+        }
     }
 }

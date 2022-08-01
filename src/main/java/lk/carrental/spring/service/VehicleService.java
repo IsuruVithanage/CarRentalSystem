@@ -1,5 +1,6 @@
 package lk.carrental.spring.service;
 
+import lk.carrental.spring.dto.CustomerDTO;
 import lk.carrental.spring.dto.UserDTO;
 import lk.carrental.spring.dto.VehicleDTO;
 
@@ -13,4 +14,6 @@ public interface VehicleService {
     void deleteVehicle(String id);
     void updateVehicle(VehicleDTO dto);
     String generateVehicleID();
+
+    VehicleDTO searchVehicle(String id);
 }

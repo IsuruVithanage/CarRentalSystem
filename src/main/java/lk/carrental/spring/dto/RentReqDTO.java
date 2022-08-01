@@ -22,7 +22,7 @@ public class RentReqDTO {
     private String driverNeed;
     private String reqConfirm;
     private String payment;
-    private double price;
+    private double cost;
     private VehicleDTO vehicle;
     private DriverDTO driver;
     private CustomerDTO customer;

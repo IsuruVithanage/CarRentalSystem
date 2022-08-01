@@ -98,9 +98,41 @@ function getConfirmedgAllReq() {
         method: "GET",
         success: function (resp) {
             for (const req of resp.data) {
-                let row = `<tr><td class="nr">${req.rentID}</td><td>${req.customer.custID}</td><td>${req.pickedDate}</td><td>${req.pickedTime}</td><td>${req.returnDate}</td><td>${req.returnTime}</td><td>${req.vehicle.vehicleID}</td><td>${req.driverNeed}</td><td><button class="tcbtn">Payment</button></td></tr>`;
+                let row = `<tr><td class="nr">${req.rentID}</td><td>${req.customer.custID}</td><td class="npd">${req.pickedDate}</td><td>${req.pickedTime}</td><td class="nrd">${req.returnDate}</td><td>${req.returnTime}</td><td class="nv">${req.vehicle.vehicleID}</td><td class="nc">${req.cost}</td><td><button class="tpbtn">Payment</button></td></tr>`;
                 $("#tblreqpay").append(row);
             }
+
+            $(".tpbtn").click(function () {
+                $("#payRentID").text($(this).closest("tr").find(".nr").text());
+                $("#txtpdate").val($(this).closest("tr").find(".npd").text());
+                $("#txtrdate").val($(this).closest("tr").find(".nrd").text());
+                $("#fullTotal").text($(this).closest("tr").find(".nc").text());
+                calculateExtraMilage($(this).closest("tr").find(".nv").text())
+                $("#mconfirmPay").css("display", "none");
+                $("#mPayment").css("display", "block");
+                $("#txtpdate").prop('disabled', true);
+                $(this).closest("tr").remove();
+            });
+
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
+}
+
+function calculateExtraMilage(id) {
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/vehicle/" + id,
+        method: "GET",
+        success: function (resp) {
+            if (resp.data.dailyRent===$("#mpay").text()){
+                console.log("go");
+            }else {
+                console.log(resp.data.dailyRent);
+            }
+
 
         },
         error: function (ob) {

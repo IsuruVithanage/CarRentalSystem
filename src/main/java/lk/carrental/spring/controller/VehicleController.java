@@ -40,6 +40,11 @@ public class VehicleController {
         return new ResponseUtil(200,"Deleted",null);
     }
 
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchVehicle(@PathVariable String id) {
+        return new ResponseUtil(200,"Ok",vehicleService.searchVehicle(id));
+    }
+
     @GetMapping(path = "/GenerateVehicleID",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil generateVehicleID() {
         return new ResponseUtil(200,"Ok",vehicleService.generateVehicleID());

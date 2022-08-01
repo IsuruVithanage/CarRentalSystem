@@ -37,6 +37,14 @@ function addthevehicle() {
 }
 
 function sendRentReq() {
+    var cost;
+    if ($('#checkday').prop('checked')){
+        cost=$('#dcost').text();
+    }else {
+        cost=$('#mcost').text();
+    }
+
+
     var cusOb = {
         custID: "C-001",
     }
@@ -58,6 +66,7 @@ function sendRentReq() {
         driverNeed: "No",
         reqConfirm: "Pending",
         payment: "No",
+        cost: cost,
         vehicle: vehiclOb,
         driver: null,
         customer: cusOb
