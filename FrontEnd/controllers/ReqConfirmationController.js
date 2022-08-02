@@ -107,7 +107,7 @@ function getConfirmedgAllReq() {
                 $("#txtpdate").val($(this).closest("tr").find(".npd").text());
                 $("#txtrdate").val($(this).closest("tr").find(".nrd").text());
                 $("#fullTotal").text($(this).closest("tr").find(".nc").text());
-                calculateExtraMilage($(this).closest("tr").find(".nv").text())
+                calculateExtraMilage($(this).closest("tr").find(".nv").text(),$(this).closest("tr").find(".nc").text())
                 $("#mconfirmPay").css("display", "none");
                 $("#mPayment").css("display", "block");
                 $("#txtpdate").prop('disabled', true);
@@ -122,15 +122,25 @@ function getConfirmedgAllReq() {
 
 }
 
-function calculateExtraMilage(id) {
+function calculateExtraMilage(id,cost) {
     $.ajax({
         url: "http://localhost:8080/CarRentalSystem_war/vehicle/" + id,
         method: "GET",
         success: function (resp) {
-            if (resp.data.dailyRent===$("#mpay").text()){
-                console.log("go");
+            cost=8000
+            if (cost===parseFloat($("#dpay").text())){
+                var free=resp.data.extraMilage;
+                var price=resp.data.extraMilagePrice;
+                var totalMile = parseFloat("300");
+                var increse=(totalMile-free)*price;
+                var total=parseFloat($("#fullTotal").text());
+                var fullamount=total+increse;
+                $("#fullTotal").text(fullamount.toString());
+                console.log(increse);
+                console.log(fullamount.toString());
+
             }else {
-                console.log(resp.data.dailyRent);
+                console.log(cost);
             }
 
 
