@@ -75,6 +75,7 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public List<DriverDTO> selectDriver() {
         PageRequest p = PageRequest.of(0, 1);
+        System.out.println(repo.selectDriver("Available",p));
         return mapper.map(repo.selectDriver("Available",p), new TypeToken<List<DriverDTO>>() {
         }.getType());
 

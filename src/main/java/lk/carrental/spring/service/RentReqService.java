@@ -16,11 +16,12 @@ public interface RentReqService {
     void deleteRentReq(String id);
     void updateRentReq(RentReqDTO dto);
     String generateRentReqID();
-    void confirmReq(String id);
+    boolean confirmReq(String id);
     void payedReq(String id);
     void deniedmReq(String id);
     void assignDriver(String id);
     boolean ifDriverNeed(String id);
+    boolean ifDriversAvailable();
     List<RentReqDTO> getReq(String status);
     List<RentReqDTO> getpayReq();
     RentReqDTO searchReq(String id);

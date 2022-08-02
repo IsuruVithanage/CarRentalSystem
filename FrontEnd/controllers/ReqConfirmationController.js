@@ -62,7 +62,12 @@ function confirmReq(rentID) {
         method: "PUT",
         contentType: "application/json", //You should state request's content type using MIME types
         success: function (res) {
-            swal("Success!", "You Request has been sent!", "success");
+            if (res){
+                swal("Success!", "You Request has been sent!", "success");
+            }else {
+                swal("Fail!", "You Request has been sent!", "warning");
+            }
+
         },
         error: function (ob) {
             alert(ob.responseJSON.message);

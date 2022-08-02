@@ -80,16 +80,22 @@ public class RentReqServiceImpl implements RentReqService {
     }
 
     @Override
-    public void confirmReq(String id) {
+    public boolean confirmReq(String id) {
         if (repo.existsById(id)) {
             repo.confirmReq("Confirmed",id);
-            System.out.println("confirm");
             if (ifDriverNeed(id)){
-                assignDriver(id);
+                if (ifDriversAvailable()){
+                    assignDriver(id);
+                    return true;
+                }else {
+                    return false;
+                }
+
             }
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
+        return false;
     }
 
     @Override
@@ -116,6 +122,7 @@ public class RentReqServiceImpl implements RentReqService {
         if (repo.existsById(id)) {
             List<Driver> available = driverRepo.selectDriver("Available", PageRequest.of(0, 1));
             repo.assignDriver(available.get(0),id);
+            driverRepo.driverUnavailable("Unavailable",available.get(0).getDriverID());
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
         }
@@ -125,6 +132,12 @@ public class RentReqServiceImpl implements RentReqService {
     public boolean ifDriverNeed(String id) {
         String s = repo.ifDriverNeed(id);
         return s.equals("Yes");
+    }
+
+    @Override
+    public boolean ifDriversAvailable() {
+        List<Driver> available = driverRepo.selectDriver("Available", PageRequest.of(0, 1));
+        return available.size() > 0;
     }
 
     @Override

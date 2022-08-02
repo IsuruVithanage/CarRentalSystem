@@ -44,13 +44,16 @@ function sendRentReq() {
         cost=$('#mcost').text();
     }
 
-
-    var cusOb = {
-        custID: "C-001",
+    var dneed;
+    if ($('#dneed').prop('checked')){
+        dneed="Yes"
+    }else {
+        dneed="No"
     }
 
-    var driverOb = {
-        driverID: "D-001",
+
+    var cusOb = {
+        custID: $("#custAcID").text(),
     }
 
     var vehiclOb = {
@@ -63,7 +66,7 @@ function sendRentReq() {
         pickedTime: reqOb.getPickedTime(),
         returnDate: reqOb.getReturnDate(),
         returnTime: reqOb.getReturnTime(),
-        driverNeed: "No",
+        driverNeed: dneed,
         reqConfirm: "Pending",
         payment: "No",
         cost: cost,

@@ -45,4 +45,10 @@ public class DriverController {
     public ResponseUtil generateDriverID() {
         return new ResponseUtil(200,"Ok",driverService.generateDriverID());
     }
+
+    @GetMapping(path = "/selectDriver",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil selectDriver() {
+        return new ResponseUtil(200,"Ok",driverService.selectDriver());
+    }
+
 }

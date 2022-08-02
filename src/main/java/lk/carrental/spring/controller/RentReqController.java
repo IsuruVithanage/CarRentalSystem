@@ -50,8 +50,8 @@ public class RentReqController {
 
     @PutMapping(path = "confirm/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil confirmReq(@PathVariable String id) {
-        rentReqService.confirmReq(id);
-        return new ResponseUtil(200,"Ok",null);
+        boolean b = rentReqService.confirmReq(id);
+        return new ResponseUtil(200,"Ok",b);
     }
 
     @PutMapping(path = "payed/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
