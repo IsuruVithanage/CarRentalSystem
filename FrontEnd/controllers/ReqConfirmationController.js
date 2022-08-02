@@ -107,7 +107,7 @@ function getConfirmedgAllReq() {
                 $("#txtpdate").val($(this).closest("tr").find(".npd").text());
                 $("#txtrdate").val($(this).closest("tr").find(".nrd").text());
                 $("#fullTotal").text($(this).closest("tr").find(".nc").text());
-                calculateExtraMilage($(this).closest("tr").find(".nv").text(),$(this).closest("tr").find(".nc").text())
+                calculateExtraMilage($(this).closest("tr").find(".nv").text(),parseFloat($(this).closest("tr").find(".nc").text()));
                 $("#mconfirmPay").css("display", "none");
                 $("#mPayment").css("display", "block");
                 $("#txtpdate").prop('disabled', true);
@@ -127,20 +127,32 @@ function calculateExtraMilage(id,cost) {
         url: "http://localhost:8080/CarRentalSystem_war/vehicle/" + id,
         method: "GET",
         success: function (resp) {
-            cost=8000
             if (cost===parseFloat($("#dpay").text())){
-                var free=resp.data.extraMilage;
+                var free=resp.data.dailyMilage;
                 var price=resp.data.extraMilagePrice;
                 var totalMile = parseFloat("300");
-                var increse=(totalMile-free)*price;
-                var total=parseFloat($("#fullTotal").text());
-                var fullamount=total+increse;
-                $("#fullTotal").text(fullamount.toString());
-                console.log(increse);
-                console.log(fullamount.toString());
+                if (totalMile>free) {
+                    var increse = (totalMile - free) * price;
+                    var total = parseFloat($("#fullTotal").text());
+                    var fullamount = total + increse;
+                    $("#fullTotal").text(fullamount.toString());
+                    console.log(increse);
+                    console.log(fullamount.toString());
+                }
 
             }else {
-                console.log(cost);
+                free=resp.data.monthlyMilage
+                price=resp.data.extraMilagePrice;
+                totalMile = parseFloat("300");
+                if (totalMile>free) {
+                    increse=(totalMile-free)*price;
+                    total=parseFloat($("#fullTotal").text());
+                    fullamount=total+increse;
+                    $("#fullTotal").text(fullamount.toString());
+                    console.log(increse);
+                    console.log(fullamount.toString());
+                }
+
             }
 
 

@@ -23,7 +23,8 @@ public class Vehicle {
     private String fuelType;
     private String color;
     private String regNumber;
-    private double extraMilage;
+    private double dailyMilage;
+    private double monthlyMilage;
     private double dailyRent;
     private double monthlyRent;
     private double extraMilagePrice;
