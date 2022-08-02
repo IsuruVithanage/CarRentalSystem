@@ -19,6 +19,10 @@ public interface RentReqRepo extends JpaRepository<RentReq, String> {
     void confirmReq(@Param("status")String status,@Param("id")String id);
 
     @Modifying
+    @Query(value = "UPDATE RentReq SET payment=:status WHERE rentID=:id")
+    void payedReq(@Param("status")String status,@Param("id")String id);
+
+    @Modifying
     @Query(value = "UPDATE RentReq SET driver=:driver WHERE rentID=:id")
     void assignDriver(@Param("driver")Driver driver,@Param("id")String id);
 
@@ -27,4 +31,7 @@ public interface RentReqRepo extends JpaRepository<RentReq, String> {
 
     @Query(value = "FROM RentReq WHERE reqConfirm=:status")
     List<RentReq> getReq(@Param("status")String status);
+
+    @Query(value = "FROM RentReq WHERE payment=:statu1 AND reqConfirm=:statu2")
+    List<RentReq> getpayReq(@Param("statu1")String statu1,@Param("statu2")String statu2);
 }

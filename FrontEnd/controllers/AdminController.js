@@ -3,7 +3,25 @@ $("#btnadminreg").click(function () {
 });
 
 
+function setUserCount(){
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/user/userCount",
+        method: "GET",
+        success: function (resp) {
+            var cont=resp.data;
+            if (cont<10){
+                cont="00"+cont;
+            }else if (cont<100){
+                cont="0"+cont;
+            }
+            $("#userCount").text(cont);
 
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
 
 function genarateAdminID() {
     $.ajax({

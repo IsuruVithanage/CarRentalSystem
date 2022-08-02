@@ -37,6 +37,12 @@ public class UserRepoTest {
     }
 
     @Test
+    public void getcount() {
+        long count = userRepo.count();
+        System.out.println(count);
+    }
+
+    @Test
     public void deleteUser() {
         userRepo.deleteById("UD002");
     }

@@ -190,7 +190,7 @@
 
         #btnBook {
             position: absolute;
-            top: 690px;
+            top: 730px;
             left: 830px;
             width: 170px;
             height: 50px;
@@ -294,7 +294,22 @@
         #btnPay {
             position: absolute;
             top: 490px;
-            left: 310px;
+            left: 400px;
+            width: 170px;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+            background-color: orange;
+            font-family: Arial;
+            border-radius: 10px;
+
+
+        }
+
+        #calMilage {
+            position: absolute;
+            top: 490px;
+            left: 210px;
             width: 170px;
             height: 50px;
             color: white;
@@ -865,6 +880,13 @@
                 </label>
             </div>
 
+            <div class="form-check" style="position: absolute; left: 470px; top: 550px">
+                <input class="form-check-input" type="checkbox" value="" id="dneed" style="font-size: 25px">
+                <label class="form-check-label" style="color: white; font-size: 25px">
+                    Driver
+                </label>
+            </div>
+
             
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
@@ -1354,7 +1376,7 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1 style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1 id="userCount" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
                             <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Total
                                 Users</p>
@@ -1706,6 +1728,8 @@
 
         <button type="button" id="btnPay">Pay</button>
 
+        <button type="button" id="calMilage">Calculate</button>
+
 
     </div>
 </main>
@@ -1757,17 +1781,18 @@
     $("#ml").css("display", "none");
     $("#mh").css("display", "none");
     $("#mb").css("display", "none");
-    $("#mcar").css("display", "none");
+    $("#mcar").css("display", "block");
     $("#md").css("display", "none");
     $("#mr").css("display", "none");
     $("#mra").css("display", "none");
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
+    setUserCount();
     $("#ma").css("display", "none");
     getPendingAllReq();
     $("#mreqConfirm").css("display", "none");
     getConfirmedgAllReq();
-    $("#mconfirmPay").css("display", "block");
+    $("#mconfirmPay").css("display", "none");
     genaratePaymentID();
     $("#mPayment").css("display", "none");
     genarateCustID();

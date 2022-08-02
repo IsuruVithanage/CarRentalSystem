@@ -93,6 +93,15 @@ public class RentReqServiceImpl implements RentReqService {
     }
 
     @Override
+    public void payedReq(String id) {
+        if (repo.existsById(id)) {
+            repo.payedReq("Payed",id);
+        } else {
+            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+        }
+    }
+
+    @Override
     public void deniedmReq(String id) {
         if (repo.existsById(id)) {
             repo.confirmReq("Denied",id);
@@ -121,6 +130,12 @@ public class RentReqServiceImpl implements RentReqService {
     @Override
     public List<RentReqDTO> getReq(String status) {
         return mapper.map(repo.getReq(status), new TypeToken<List<RentReqDTO>>() {
+        }.getType());
+    }
+
+    @Override
+    public List<RentReqDTO> getpayReq() {
+        return mapper.map(repo.getpayReq("No","Confirmed"), new TypeToken<List<RentReqDTO>>() {
         }.getType());
     }
 

@@ -46,4 +46,10 @@ public class UserController {
         return new ResponseUtil(200,"Ok",userService.generateUserID());
     }
 
+
+    @GetMapping(path = "/userCount",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getUserCount() {
+        return new ResponseUtil(200,"Ok",userService.userCount());
+    }
+
 }

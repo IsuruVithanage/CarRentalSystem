@@ -71,4 +71,9 @@ public class UserServiceImpl implements UserService {
         return "U-001";
     }
 
+    @Override
+    public Long userCount() {
+        return repo.count();
+    }
+
 }

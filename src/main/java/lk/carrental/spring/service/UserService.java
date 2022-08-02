@@ -16,4 +16,6 @@ public interface UserService {
     void updateUser(UserDTO dto);
     String generateUserID();
 
+    Long userCount();
+
 }

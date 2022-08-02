@@ -48,9 +48,15 @@ public class RentReqController {
         return new ResponseUtil(200,"Ok",rentReqService.generateRentReqID());
     }
 
-    @PutMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil confirmReq(@RequestParam String id) {
+    @PutMapping(path = "confirm/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil confirmReq(@PathVariable String id) {
         rentReqService.confirmReq(id);
+        return new ResponseUtil(200,"Ok",null);
+    }
+
+    @PutMapping(path = "payed/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil payedReq(@PathVariable String id) {
+        rentReqService.payedReq(id);
         return new ResponseUtil(200,"Ok",null);
     }
 
@@ -63,6 +69,11 @@ public class RentReqController {
     @GetMapping(path = "pendingreq/{status}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getReq(@PathVariable String status) {
         return new ResponseUtil(200,"Ok",rentReqService.getReq(status));
+    }
+
+    @GetMapping(path = "/payreq",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getPayReq() {
+        return new ResponseUtil(200,"Ok",rentReqService.getpayReq());
     }
 
     @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
