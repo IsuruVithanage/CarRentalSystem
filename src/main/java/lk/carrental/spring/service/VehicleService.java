@@ -16,6 +16,7 @@ public interface VehicleService {
     String generateVehicleID();
 
     VehicleDTO searchVehicle(String id);
+    void setVehicleAvailable(String id);
 
     List<VehicleDTO> getSelectedVehicles(String status);
 }

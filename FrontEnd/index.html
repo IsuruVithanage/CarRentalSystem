@@ -1753,26 +1753,17 @@
     $("#mra").css("display", "none");
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
-    setUserCount();
-    getDailyPayment();
-    getMonthlyPayment();
-    getYearlyPayment();
-    setDriverCount();
-    setVhicleCount();
-    setReqCount();
-    getIncome();
-    setPaymentReqCount();
+
+    loadAdminPage();
     $("#ma").css("display", "block");
-    getPendingAllReq();
+
     $("#mreqConfirm").css("display", "none");
-    getConfirmedgAllReq();
+
     $("#mconfirmPay").css("display", "none");
-    genaratePaymentID();
+
     $("#mPayment").css("display", "none");
     genarateCustID();
-    genarateAdminID();
     genarateUserID();
-    genarateDriverID();
     genarateVehicleID();
     genarateRentID();
 
@@ -1784,25 +1775,20 @@
     });
 
     $("#adminHome").click(function () {
-        setUserCount();
-        getDailyPayment();
-        getMonthlyPayment();
-        getYearlyPayment();
-        setDriverCount();
-        setVhicleCount();
-        setReqCount();
-        getIncome();
-        setPaymentReqCount();
+        loadAdminPage();
 
     });
 
     $("#atReq").click(function () {
+        getPendingAllReq();
         $("#ma").css("display", "none");
         $("#mreqConfirm").css("display", "block");
 
     });
 
     $("#agPay").click(function () {
+        genaratePaymentID();
+        getConfirmedgAllReq();
         $("#ma").css("display", "none");
         $("#mconfirmPay").css("display", "block");
 
@@ -1815,36 +1801,44 @@
     });
 
     $("#addAdmin").click(function () {
+        genarateAdminID();
+        genarateUserID();
         $("#ma").css("display", "none");
         $("#mra").css("display", "block");
 
     });
 
     $("#addDriver").click(function () {
+        genarateDriverID();
+        genarateUserID();
         $("#ma").css("display", "none");
         $("#mrd").css("display", "block");
 
     });
 
     $(".aHome").click(function () {
+        loadAdminPage();
         $("#ma").css("display", "block");
         $("#mreqConfirm").css("display", "none");
 
     });
 
     $("#rahome").click(function () {
+        loadAdminPage();
         $("#ma").css("display", "block");
         $("#mra").css("display", "none");
 
     });
 
     $("#rdhome").click(function () {
+        loadAdminPage();
         $("#ma").css("display", "block");
         $("#mrd").css("display", "none");
 
     });
 
     $("#aphome").click(function () {
+        loadAdminPage();
         $("#ma").css("display", "block");
         $("#mconfirmPay").css("display", "none");
 
@@ -1873,6 +1867,19 @@
         getPendingAllReq();
 
     });
+
+    function loadAdminPage() {
+        setUserCount();
+        getDailyPayment();
+        getMonthlyPayment();
+        getYearlyPayment();
+        setDriverCount();
+        setVhicleCount();
+        setReqCount();
+        getIncome();
+        setPaymentReqCount();
+
+    }
 </script>
 
 </body>

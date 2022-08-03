@@ -22,7 +22,7 @@ public class VehicleRepoTest {
 
     @Test
     public void saveVehicle() {
-        Vehicle vehicle=new Vehicle("V-001","Toyota","Car","4","Auto","Petrol","White","12333",100,1000,8000,30000,40,"avaialable");
+        Vehicle vehicle=new Vehicle("V-001","Toyota","Car","4","Auto","Petrol","White","12333",100,1000,8000,30000,40,"Available");
         vehicleRepo.save(vehicle);
 
     }
@@ -43,7 +43,7 @@ public class VehicleRepoTest {
     @Test
     public void updateVehicle(){
         if (vehicleRepo.existsById("V001")) {
-            Vehicle vehicle=new Vehicle("V001","Toyota","Van","4","Auto","Petrol","White","12333",100,1000,100,100,100,"avaialable");
+            Vehicle vehicle=new Vehicle("V-001","Toyota","Van","4","Auto","Petrol","White","12333",100,1000,100,100,100,"Available");
             vehicleRepo.save(vehicle);
         }else{
             throw new RuntimeException("No Such Diver To Update");

@@ -85,4 +85,10 @@ public class DriverServiceImpl implements DriverService {
         List<Driver> available = repo.selectDriver("Available");
         return available.size();
     }
+
+    @Override
+    public void setDriverAvailable(String id) {
+        repo.driverUnavailable("Available",id);
+
+    }
 }

@@ -45,7 +45,7 @@ function setDriverCount(){
 
 function setVhicleCount(){
     $.ajax({
-        url: "http://localhost:8080/CarRentalSystem_war/vehicle/select/avaialable",
+        url: "http://localhost:8080/CarRentalSystem_war/vehicle/select/Available",
         method: "GET",
         success: function (resp) {
             var cont=resp.data.length;

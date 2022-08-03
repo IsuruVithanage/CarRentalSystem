@@ -18,7 +18,35 @@ function genaratePaymentID() {
     });
 }
 
+function setDriverAvailable(ID) {
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/driver/" + ID,
+        method: "PUT",
+        contentType: "application/json", //You should state request's content type using MIME types
+        success: function (res) {
+            //swal("Success!", "You Request has been sent!", "success");
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 
+}
+
+function setVehicleAvailable(ID) {
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/vehicle/" + ID,
+        method: "PUT",
+        contentType: "application/json", //You should state request's content type using MIME types
+        success: function (res) {
+            //swal("Success!", "You Request has been sent!", "success");
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
+}
 
 function savePayment() {
     var rID=$("#payRentID").text();
@@ -65,7 +93,8 @@ function savePayment() {
                 contentType: "application/json",
                 data: JSON.stringify(payOb),
                 success: function (res) {
-                    console.log("Customer saved");
+                    setDriverAvailable(driverID);
+                    setVehicleAvailable(vehicelID);
                     swal("Success!", "You Are Successfully Registered!", "success");
                 },
                 error: function (ob) {

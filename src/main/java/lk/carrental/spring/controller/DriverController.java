@@ -29,6 +29,12 @@ public class DriverController {
         return new ResponseUtil(200,"Save",null);
     }
 
+    @PutMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil setDriverAvailable(@PathVariable String id) {
+        driverService.setDriverAvailable(id);
+        return new ResponseUtil(200,"Save",null);
+    }
+
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateDriver(@RequestBody DriverDTO driver) {
         driverService.updateDriver(driver);

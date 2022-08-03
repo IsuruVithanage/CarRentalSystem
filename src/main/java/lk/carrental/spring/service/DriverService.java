@@ -16,4 +16,5 @@ public interface DriverService {
     String generateDriverID();
     List<DriverDTO> selectDriver(String status);
     Integer availableDriverCount();
+    void setDriverAvailable(String id);
 }

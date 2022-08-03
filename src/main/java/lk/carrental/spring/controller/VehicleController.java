@@ -55,5 +55,11 @@ public class VehicleController {
     public ResponseUtil getSelectedVehicles(@PathVariable String status) {
         return new ResponseUtil(200,"Ok",vehicleService.getSelectedVehicles(status));
     }
+
+    @PutMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil setVehicleAvailable(@PathVariable String id) {
+        vehicleService.setVehicleAvailable(id);
+        return new ResponseUtil(200,"Save",null);
+    }
 }
 

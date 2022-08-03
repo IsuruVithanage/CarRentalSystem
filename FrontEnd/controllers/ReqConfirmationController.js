@@ -77,10 +77,7 @@ function payedReq(rentID) {
 
 }
 
-function confirmReq(rentID) {
 
-
-}
 
 function denyReq(rentID) {
     $.ajax({
@@ -96,6 +93,8 @@ function denyReq(rentID) {
     });
 
 }
+
+
 
 
 function denyReqMessage(rentID, message) {
