@@ -63,6 +63,26 @@ function setVhicleCount(){
     });
 }
 
+function setMaintainVhicleCount(){
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/vehicle/select/Maintaining",
+        method: "GET",
+        success: function (resp) {
+            var cont=resp.data.length;
+            if (cont<10){
+                cont="00"+cont;
+            }else if (cont<100){
+                cont="0"+cont;
+            }
+            $("#repairVehi").text(cont);
+
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
 function setReqCount(){
     $.ajax({
         url: "http://localhost:8080/CarRentalSystem_war/rentreq/pendingreq/Pending",

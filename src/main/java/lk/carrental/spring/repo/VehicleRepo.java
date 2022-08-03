@@ -16,6 +16,6 @@ public interface VehicleRepo extends JpaRepository<Vehicle, String> {
     List<Vehicle> getSelectedVehicles(@Param("status")String status);
 
     @Modifying
-    @Query(value = "UPDATE Driver SET availability=:status WHERE driverID=:id")
+    @Query(value = "UPDATE Vehicle SET availability=:status WHERE vehicleID=:id")
     void changeVehicleAvailability(@Param("status")String status,@Param("id")String id);
 }

@@ -61,5 +61,11 @@ public class VehicleController {
         vehicleService.setVehicleAvailable(id);
         return new ResponseUtil(200,"Save",null);
     }
+
+    @PutMapping(path = "maintain/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil addToMaintain(@PathVariable String id) {
+        vehicleService.addTomaintain(id);
+        return new ResponseUtil(200,"Save",null);
+    }
 }
 

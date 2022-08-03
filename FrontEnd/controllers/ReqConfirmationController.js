@@ -143,6 +143,7 @@ function getConfirmedgAllReq() {
                 $("#mconfirmPay").css("display", "none");
                 $("#mPayment").css("display", "block");
                 $("#txtpdate").prop('disabled', true);
+                $("#txtrdate").prop('disabled', true);
                 $(this).closest("tr").remove();
             });
 

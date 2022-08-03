@@ -86,7 +86,7 @@ function RentReq(rentID, pickedDate, pickedTime, returnDate, returnTime, driverN
         __customer=cID;
         __pickedDate=pdate;
         __pickedTime=ptime;
-        __returnDate=rtime;
+        __returnDate=rdate;
         __returnTime=rtime;
         __driverNeed=dneed;
     }

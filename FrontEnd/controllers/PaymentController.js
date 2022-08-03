@@ -77,6 +77,8 @@ function savePayment() {
                 customer: cusOb
             }
 
+
+
             var payOb = {
                 paymentID: $("#payID").text(),
                 date: $("#txtrdate").val(),
@@ -94,7 +96,12 @@ function savePayment() {
                 data: JSON.stringify(payOb),
                 success: function (res) {
                     setDriverAvailable(driverID);
-                    setVehicleAvailable(vehicelID);
+                    if ($("#damagecost").val().length>0){
+                        addToMaintain(vehicelID);
+
+                    }else {
+                        setVehicleAvailable(vehicelID);
+                    }
                     swal("Success!", "You Are Successfully Registered!", "success");
                 },
                 error: function (ob) {
@@ -108,6 +115,21 @@ function savePayment() {
         }
     });
 
+
+}
+
+function addToMaintain(ID) {
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/vehicle/maintain/" + ID,
+        method: "PUT",
+        contentType: "application/json", //You should state request's content type using MIME types
+        success: function (res) {
+            //swal("Success!", "You Request has been sent!", "success");
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 
 }
 

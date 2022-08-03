@@ -10,6 +10,7 @@ function logIn() {
         $("#ml").css("display", "none");
         $("#mh").css("display", "block");
     }else if ($('#checkAdmin').prop('checked')){
+        loadAdminPage();
         $("#ml").css("display", "none");
         $("#ma").css("display", "block");
     }
