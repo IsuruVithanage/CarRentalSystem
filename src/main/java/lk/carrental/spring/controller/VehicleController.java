@@ -49,4 +49,11 @@ public class VehicleController {
     public ResponseUtil generateVehicleID() {
         return new ResponseUtil(200,"Ok",vehicleService.generateVehicleID());
     }
+
+
+    @GetMapping(path = "select/{status}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getSelectedVehicles(@PathVariable String status) {
+        return new ResponseUtil(200,"Ok",vehicleService.getSelectedVehicles(status));
+    }
 }
+

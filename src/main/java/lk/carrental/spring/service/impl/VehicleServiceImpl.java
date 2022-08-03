@@ -1,6 +1,7 @@
 package lk.carrental.spring.service.impl;
 
 import lk.carrental.spring.dto.CustomerDTO;
+import lk.carrental.spring.dto.DriverDTO;
 import lk.carrental.spring.dto.UserDTO;
 import lk.carrental.spring.dto.VehicleDTO;
 import lk.carrental.spring.entity.Driver;
@@ -12,6 +13,7 @@ import lk.carrental.spring.service.VehicleService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -81,5 +83,11 @@ public class VehicleServiceImpl implements VehicleService {
         } else {
             throw new RuntimeException("No Customer For " + id + " ..!");
         }
+    }
+
+    @Override
+    public List<VehicleDTO> getSelectedVehicles(String status) {
+        return mapper.map(repo.getSelectedVehicles(status), new TypeToken<List<VehicleDTO>>() {
+        }.getType());
     }
 }

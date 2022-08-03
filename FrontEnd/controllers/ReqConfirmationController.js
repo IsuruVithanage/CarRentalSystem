@@ -10,13 +10,28 @@ function getPendingAllReq() {
             }
 
             $(".tcbtn").click(function () {
-                var b=confirmReq($(this).closest("tr").find(".nr").text());
-                if (b){
-                    $(this).closest("tr").remove();
-                    swal("Success!", "You Request has been sent!", "success");
-                }else {
-                    swal("Warning!", "No available driver for this request!", "warning");
-                }
+                /*var b=confirmReq($(this).closest("tr").find(".nr").text());
+                console.log(b);*/
+                var rentID=$(this).closest("tr").find(".nr").text();
+                var closest = $(this).closest("tr");
+
+                $.ajax({
+                    url: "http://localhost:8080/CarRentalSystem_war/rentreq/confirm/" + rentID,
+                    method: "PUT",
+                    contentType: "application/json", //You should state request's content type using MIME types
+                    success: function (res) {
+                        if (res.data){
+                            closest.remove();
+                            swal("Success!", "You Request has been sent!", "success");
+                        }else {
+                            swal("Warning!", "No available driver for this request!", "warning");
+                        }
+
+                    },
+                    error: function (ob) {
+                        alert(ob.responseJSON.message);
+                    }
+                });
 
             });
 
@@ -63,18 +78,7 @@ function payedReq(rentID) {
 }
 
 function confirmReq(rentID) {
-    $.ajax({
-        url: "http://localhost:8080/CarRentalSystem_war/rentreq/confirm/" + rentID,
-        method: "PUT",
-        contentType: "application/json", //You should state request's content type using MIME types
-        success: function (res) {
-            return res.data;
 
-        },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
-        }
-    });
 
 }
 

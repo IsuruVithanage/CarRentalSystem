@@ -43,6 +43,66 @@ function setDriverCount(){
     });
 }
 
+function setVhicleCount(){
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/vehicle/select/avaialable",
+        method: "GET",
+        success: function (resp) {
+            var cont=resp.data.length;
+            if (cont<10){
+                cont="00"+cont;
+            }else if (cont<100){
+                cont="0"+cont;
+            }
+            $("#vehiCount").text(cont);
+
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+function setReqCount(){
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/rentreq/pendingreq/Pending",
+        method: "GET",
+        success: function (resp) {
+            var cont=resp.data.length;
+            if (cont<10){
+                cont="00"+cont;
+            }else if (cont<100){
+                cont="0"+cont;
+            }
+            $("#totBooking").text(cont);
+
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+function setPaymentReqCount(){
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/rentreq/payreq",
+        method: "GET",
+        success: function (resp) {
+            var cont=resp.data.length;
+            if (cont<10){
+                cont="00"+cont;
+            }else if (cont<100){
+                cont="0"+cont;
+            }
+            $("#paymentReq").text(cont);
+
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
 function genarateAdminID() {
     $.ajax({
         url: "http://localhost:8080/CarRentalSystem_war/admin/GenerateAdminID",
@@ -56,8 +116,6 @@ function genarateAdminID() {
             alert(ob.responseJSON.message);
         }
     });
-
-
 }
 
 function saveAdmin() {

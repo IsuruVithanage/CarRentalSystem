@@ -1397,7 +1397,7 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1 style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1 id="vehiCount" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
                             <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Available
                                 Cars</p>
@@ -1418,7 +1418,7 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1 style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1 id="totBooking" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
                             <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Total
                                 Bookings</p>
@@ -1439,10 +1439,9 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1 style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1 id="paymentReq" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
-                            <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Available
-                                Drivers</p>
+                            <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Get Payments</p>
                         </div>
                     </div>
                 </div>
@@ -1785,6 +1784,9 @@
     $("#mrv").css("display", "none");
     setUserCount();
     setDriverCount();
+    setVhicleCount();
+    setReqCount();
+    setPaymentReqCount();
     $("#ma").css("display", "block");
     getPendingAllReq();
     $("#mreqConfirm").css("display", "none");
