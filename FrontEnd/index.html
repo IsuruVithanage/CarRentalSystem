@@ -1504,13 +1504,13 @@
             </div>
             <h1 style="font-size: 30px; color: orange; text-align: center; padding-top: 10px">INCOME</h1>
             <h1 style="position: absolute; font-family: 'Segoe UI Black'; font-size: 35px; top: 85px; left: 200px">Rs
-                6000</h1>
+                <span id="txtdaily">6000</span></h1>
             <p style="position: absolute; left: 200px; top: 55px; font-size: 20px">Daily</p>
             <h1 style="position: absolute; font-family: 'Segoe UI Black'; font-size: 35px; top: 160px; left: 200px">Rs
-                6000</h1>
+                <span id="txtmonthly">6000</span></h1>
             <p style="position: absolute; left: 200px; top: 130px; font-size: 20px">Monthly</p>
             <h1 style="position: absolute; font-family: 'Segoe UI Black'; font-size: 35px; top: 230px; left: 200px">Rs
-                6000</h1>
+                <span id="txtYear">6000</span></h1>
             <p style="position: absolute; left: 200px; top: 200px; font-size: 20px">Monthly</p>
 
         </div>
@@ -1742,35 +1742,12 @@
 <script src="controllers/RentReqController.js"></script>
 <script src="controllers/ReqConfirmationController.js"></script>
 <script src="controllers/PaymentController.js"></script>
+<script src="controllers/IncomeController.js"></script>
+<script src="controllers/ChartController.js"></script>
 <script src="model/Customer.js"></script>
 <script src="model/RentReq.js"></script>
 <script src="db.js"></script>
-
 <script src=""></script>
-<script>
-    var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
-
-    new Chart("myChart", {
-        type: "line",
-        data: {
-            labels: xValues,
-            datasets: [{
-                fill: false,
-                lineTension: 0,
-                backgroundColor: "rgb(255,140,0)",
-                borderColor: "rgba(0,0,255,0.1)",
-                data: yValues
-            }]
-        },
-        options: {
-            legend: {display: false},
-            scales: {
-                yAxes: [{ticks: {min: 6, max: 20}}],
-            }
-        }
-    });
-</script>
 <script>
 
     $("#ml").css("display", "none");
@@ -1783,6 +1760,9 @@
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
     setUserCount();
+    getDailyPayment();
+    getMonthlyPayment();
+    getYearlyPayment();
     setDriverCount();
     setVhicleCount();
     setReqCount();
