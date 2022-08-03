@@ -36,7 +36,7 @@ function saveCustomer() {
         licenseNo: $("#rcustlicen").val(),
         nic: $("#rcuntNic").val(),
         contact: $("#rcustContact").val(),
-        user: null
+        user: userOb
     }
 
     $.ajax({
@@ -47,6 +47,8 @@ function saveCustomer() {
         success: function (res) {
             console.log("Customer saved");
             swal("Success!", "You Are Successfully Registered!", "success");
+            genarateCustID();
+            genarateUserID();
         },
         error: function (ob) {
             alert(ob.responseJSON.message);

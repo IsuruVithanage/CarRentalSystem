@@ -570,13 +570,10 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
+                    <li id="lhome">Home</li>
                 </a>
                 <a href="#">
-                    <li>Places</li>
-                </a>
-                <a href="#foo">
-                    <li>Register</li>
+                    <li id="lreg">Register</li>
                 </a>
             </ul>
 
@@ -602,14 +599,8 @@
         </div>
 
         <div style="position: relative; width: 100px; top: 270px; left: 130px">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="checkGuest" style="font-size: 20px">
-                <label class="form-check-label" style="color: white; font-size: 20px">
-                    Guest
-                </label>
-            </div>
 
-            <div class="form-check" style="position: absolute; left: 100px; top: 2px">
+            <div class="form-check" style="position: absolute; left: 20px; top: 2px">
                 <input class="form-check-input" type="checkbox" value="" id="checkCust" style="font-size: 20px">
                 <label class="form-check-label" style="color: white; font-size: 20px">
                     Customer
@@ -641,10 +632,10 @@
                     <li class="home">Home</li>
                 </a>
                 <a href="#">
-                    <li>Places</li>
+                    <li id="lg">Log In</li>
                 </a>
-                <a href="#foo">
-                    <li>Register</li>
+                <a href="#">
+                    <li id="reg">Register</li>
                 </a>
             </ul>
 
@@ -1001,13 +992,10 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
-                </a>
-                <a href="#">
-                    <li>Places</li>
+                    <li id="rhome">Home</li>
                 </a>
                 <a href="#foo">
-                    <li>Register</li>
+                    <li id="log">Log In</li>
                 </a>
             </ul>
 
@@ -1353,6 +1341,9 @@
                 </a>
                 <a href="#">
                     <li id="addDriver">Add Driver</li>
+                </a>
+                <a href="#">
+                    <li id="alout">Log Out</li>
                 </a>
             </ul>
 
@@ -1738,13 +1729,14 @@
 <script src="controllers/PaymentController.js"></script>
 <script src="controllers/IncomeController.js"></script>
 <script src="controllers/ChartController.js"></script>
+<script src="controllers/LogingController.js"></script>
 <script src="model/Customer.js"></script>
 <script src="model/RentReq.js"></script>
 <script src="db.js"></script>
 <script src=""></script>
 <script>
 
-    $("#ml").css("display", "none");
+    $("#ml").css("display", "block");
     $("#mh").css("display", "none");
     $("#mb").css("display", "none");
     $("#mcar").css("display", "none");
@@ -1755,15 +1747,15 @@
     $("#mrv").css("display", "none");
 
     loadAdminPage();
-    $("#ma").css("display", "block");
+
+    $("#ma").css("display", "none");
 
     $("#mreqConfirm").css("display", "none");
 
     $("#mconfirmPay").css("display", "none");
 
     $("#mPayment").css("display", "none");
-    genarateCustID();
-    genarateUserID();
+
     genarateVehicleID();
     genarateRentID();
 
@@ -1797,6 +1789,44 @@
     $("#phome").click(function () {
         $("#mPayment").css("display", "none");
         $("#mconfirmPay").css("display", "block");
+
+    });
+
+    $("#lg").click(function () {
+        $("#mh").css("display", "none");
+        $("#ml").css("display", "block");
+
+    });
+
+    $("#alout").click(function () {
+        $("#ma").css("display", "none");
+        $("#ml").css("display", "block");
+
+    });
+
+    $("#reg").click(function () {
+        $("#mh").css("display", "none");
+        $("#mr").css("display", "block");
+
+    });
+
+    $("#rhome").click(function () {
+        $("#mr").css("display", "none");
+        $("#mh").css("display", "block");
+
+    });
+
+    $("#lhome").click(function () {
+        $("#ml").css("display", "none");
+        $("#mh").css("display", "block");
+
+    });
+
+    $("#lreg").click(function () {
+        genarateCustID();
+        genarateUserID();
+        $("#ml").css("display", "none");
+        $("#mr").css("display", "block");
 
     });
 
