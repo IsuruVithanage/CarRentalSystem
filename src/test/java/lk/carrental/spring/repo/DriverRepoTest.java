@@ -25,7 +25,7 @@ public class DriverRepoTest {
 
     @Test
     public void saveDriver() {
-        Driver driver=new Driver("D-005","Nuwan","Galle","23332","323","12212","available",new User("U-006","Nuwan","34nd","dr"));
+        Driver driver=new Driver("D-008","Nuwan","Galle","23332","323","12212","available",new User("U-009","Nuwan","34nd","dr"));
         driverRepo.save(driver);
 
     }

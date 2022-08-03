@@ -35,7 +35,7 @@ public class RentReqTest {
         Driver d002 = driverRepo.getReferenceById("D-001");
         Customer c002 = customerRepo.getReferenceById("C-001");
 
-        RentReq rentReq=new RentReq("R-003","2022-06-06","2","33","12","Yes","Pending","none",8000,id,d002,c002);
+        RentReq rentReq=new RentReq("R-024","2022-06-06","2","33","12","Yes","Pending","No",8000,id,null,c002);
         rentReqRepo.save(rentReq);
 
     }

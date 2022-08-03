@@ -10,8 +10,14 @@ function getPendingAllReq() {
             }
 
             $(".tcbtn").click(function () {
-                confirmReq($(this).closest("tr").find(".nr").text());
-                $(this).closest("tr").remove();
+                var b=confirmReq($(this).closest("tr").find(".nr").text());
+                if (b){
+                    $(this).closest("tr").remove();
+                    swal("Success!", "You Request has been sent!", "success");
+                }else {
+                    swal("Warning!", "No available driver for this request!", "warning");
+                }
+
             });
 
             $(".tdbtn").click(function () {
@@ -62,11 +68,7 @@ function confirmReq(rentID) {
         method: "PUT",
         contentType: "application/json", //You should state request's content type using MIME types
         success: function (res) {
-            if (res){
-                swal("Success!", "You Request has been sent!", "success");
-            }else {
-                swal("Fail!", "You Request has been sent!", "warning");
-            }
+            return res.data;
 
         },
         error: function (ob) {
