@@ -1087,12 +1087,12 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
+                    <li id="rahome">Home</li>
                 </a>
                 <a href="#">
                     <li>Places</li>
                 </a>
-                <a href="#foo">
+                <a href="#">
                     <li>Register</li>
                 </a>
             </ul>
@@ -1155,7 +1155,7 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
+                    <li id="rdhome">Home</li>
                 </a>
                 <a href="#">
                     <li>Places</li>
@@ -1346,13 +1346,13 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
+                    <li id="adminHome">Home</li>
                 </a>
                 <a href="#">
-                    <li>Places</li>
+                    <li id="addAdmin">Add Admin</li>
                 </a>
-                <a href="#foo">
-                    <li>Register</li>
+                <a href="#">
+                    <li id="addDriver">Add Driver</li>
                 </a>
             </ul>
 
@@ -1409,7 +1409,7 @@
 
         <div class="vehicleContainer" style="top: 40px; left: 450px">
             <a href="#" style="text-decoration: none; color: black">
-                <div class="container" style=" border-radius: 10px; width: 270px; height: 130px; position: relative">
+                <div id="atReq" class="container" style=" border-radius: 10px; width: 270px; height: 130px; position: relative">
                     <div class="row" style="">
                         <div class="col-5">
                             <div style="background-color: rgba(255,165,0,0.6); width: 90px; height: 90px; border-radius: 100%; position: relative; top: 15px; left: 10px">
@@ -1430,7 +1430,7 @@
 
         <div class="vehicleContainer" style="top: 40px; left: 750px">
             <a href="#" style="text-decoration: none; color: black">
-                <div class="container" style=" border-radius: 10px; width: 270px; height: 130px; position: relative">
+                <div id="agPay" class="container" style=" border-radius: 10px; width: 270px; height: 130px; position: relative">
                     <div class="row" style="">
                         <div class="col-5">
                             <div style="background-color: rgba(255,165,0,0.6); width: 90px; height: 90px; border-radius: 100%; position: relative; top: 15px; left: 10px">
@@ -1526,11 +1526,11 @@
     <header>
         <div>
             <div>
-                <h3>RENTACAR</h3>
+                <h3 >RENTACAR</h3>
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
+                    <li class="aHome">Home</li>
                 </a>
                 <a href="#">
                     <li>Places</li>
@@ -1617,7 +1617,7 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
+                    <li id="aphome">Home</li>
                 </a>
                 <a href="#">
                     <li>Places</li>
@@ -1662,13 +1662,7 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
-                </a>
-                <a href="#">
-                    <li>Places</li>
-                </a>
-                <a href="#foo">
-                    <li>Register</li>
+                    <li id="phome">Table</li>
                 </a>
             </ul>
 
@@ -1786,6 +1780,73 @@
         $("#mh").css("display", "none");
         $("#mb").css("display", "block");
         $("#mcar").css("display", "none");
+
+    });
+
+    $("#adminHome").click(function () {
+        setUserCount();
+        getDailyPayment();
+        getMonthlyPayment();
+        getYearlyPayment();
+        setDriverCount();
+        setVhicleCount();
+        setReqCount();
+        getIncome();
+        setPaymentReqCount();
+
+    });
+
+    $("#atReq").click(function () {
+        $("#ma").css("display", "none");
+        $("#mreqConfirm").css("display", "block");
+
+    });
+
+    $("#agPay").click(function () {
+        $("#ma").css("display", "none");
+        $("#mconfirmPay").css("display", "block");
+
+    });
+
+    $("#phome").click(function () {
+        $("#mPayment").css("display", "none");
+        $("#mconfirmPay").css("display", "block");
+
+    });
+
+    $("#addAdmin").click(function () {
+        $("#ma").css("display", "none");
+        $("#mra").css("display", "block");
+
+    });
+
+    $("#addDriver").click(function () {
+        $("#ma").css("display", "none");
+        $("#mrd").css("display", "block");
+
+    });
+
+    $(".aHome").click(function () {
+        $("#ma").css("display", "block");
+        $("#mreqConfirm").css("display", "none");
+
+    });
+
+    $("#rahome").click(function () {
+        $("#ma").css("display", "block");
+        $("#mra").css("display", "none");
+
+    });
+
+    $("#rdhome").click(function () {
+        $("#ma").css("display", "block");
+        $("#mrd").css("display", "none");
+
+    });
+
+    $("#aphome").click(function () {
+        $("#ma").css("display", "block");
+        $("#mconfirmPay").css("display", "none");
 
     });
 
