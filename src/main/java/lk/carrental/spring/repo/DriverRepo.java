@@ -13,7 +13,7 @@ public interface DriverRepo extends JpaRepository<Driver, String> {
     Driver findTopByOrderByDriverIDDesc();
 
     @Query(value = "FROM Driver WHERE availability=:status")
-    List<Driver> selectDriver(@Param("status")String status, Pageable p);
+    List<Driver> selectDriver(@Param("status")String status);
 
     @Modifying
     @Query(value = "UPDATE Driver SET availability=:status WHERE driverID=:id")

@@ -122,7 +122,7 @@ public class RentReqServiceImpl implements RentReqService {
     @Override
     public void assignDriver(String id) {
         if (repo.existsById(id)) {
-            List<Driver> available = driverRepo.selectDriver("Available", PageRequest.of(0, 1));
+            List<Driver> available = driverRepo.selectDriver("Available");
             repo.assignDriver(available.get(0),id);
             driverRepo.driverUnavailable("Unavailable",available.get(0).getDriverID());
         } else {
@@ -138,7 +138,7 @@ public class RentReqServiceImpl implements RentReqService {
 
     @Override
     public boolean ifDriversAvailable() {
-        List<Driver> available = driverRepo.selectDriver("Available", PageRequest.of(0, 1));
+        List<Driver> available = driverRepo.selectDriver("Available");
         return available.size() > 0;
     }
 

@@ -1434,19 +1434,15 @@
                     <div class="row" style="">
                         <div class="col-5">
                             <div style="background-color: rgba(255,165,0,0.6); width: 90px; height: 90px; border-radius: 100%; position: relative; top: 15px; left: 10px">
-                                <img src="assets/images/drivei.png" alt="" width="64" height="64"
+                                <img src="assets/images/reseri.png" alt="" width="64" height="64"
                                      style="position: absolute; left: 13px; top: 10px">
                             </div>
                         </div>
                         <div class="col-7">
                             <h1 style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
-                            <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Total
-                                Users</p>
-                            <!--                   <p style="position: absolute; top: 70px; font-size: 20px; left: 450px">Petrol</p>
-                                               <p style="position: absolute; top: 110px; padding-left: 20px; font-size: 20px;">Auto</p>
-                                               <p style="position: absolute; top: 110px; left: 450px; font-size: 20px; color: red">
-                                                   Available</p>-->
+                            <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Available
+                                Drivers</p>
                         </div>
                     </div>
                 </div>
@@ -1459,12 +1455,12 @@
                     <div class="row" style="">
                         <div class="col-5">
                             <div style="background-color: rgba(255,165,0,0.6); width: 90px; height: 90px; border-radius: 100%; position: relative; top: 15px; left: 10px">
-                                <img src="assets/images/reseri.png" alt="" width="64" height="64"
+                                <img src="assets/images/drivei.png" alt="" width="64" height="64"
                                      style="position: absolute; left: 13px; top: 10px">
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1 style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1  id="drivercount" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
                             <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Available
                                 Drivers</p>
@@ -1788,9 +1784,10 @@
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
     setUserCount();
-    $("#ma").css("display", "none");
+    setDriverCount();
+    $("#ma").css("display", "block");
     getPendingAllReq();
-    $("#mreqConfirm").css("display", "block");
+    $("#mreqConfirm").css("display", "none");
     getConfirmedgAllReq();
     $("#mconfirmPay").css("display", "none");
     genaratePaymentID();

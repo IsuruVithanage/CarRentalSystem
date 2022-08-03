@@ -23,6 +23,26 @@ function setUserCount(){
     });
 }
 
+function setDriverCount(){
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/driver/driverCount",
+        method: "GET",
+        success: function (resp) {
+            var cont=resp.data;
+            if (cont<10){
+                cont="00"+cont;
+            }else if (cont<100){
+                cont="0"+cont;
+            }
+            $("#drivercount").text(cont);
+
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
 function genarateAdminID() {
     $.ajax({
         url: "http://localhost:8080/CarRentalSystem_war/admin/GenerateAdminID",

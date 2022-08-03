@@ -73,11 +73,16 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public List<DriverDTO> selectDriver() {
+    public List<DriverDTO> selectDriver(String status) {
         PageRequest p = PageRequest.of(0, 1);
-        System.out.println(repo.selectDriver("Available",p));
-        return mapper.map(repo.selectDriver("Available",p), new TypeToken<List<DriverDTO>>() {
+        return mapper.map(repo.selectDriver(status), new TypeToken<List<DriverDTO>>() {
         }.getType());
 
+    }
+
+    @Override
+    public Integer availableDriverCount() {
+        List<Driver> available = repo.selectDriver("Available");
+        return available.size();
     }
 }

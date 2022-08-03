@@ -7,4 +7,5 @@ public interface AdminService {
     void saveAdmin(AdminDTO dto);
     String generateAdminID();
 
+
 }
