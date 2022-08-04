@@ -22,7 +22,7 @@ public class VehicleRepoTest {
 
     @Test
     public void saveVehicle() {
-        Vehicle vehicle=new Vehicle("V-001","Toyota","Car","4","Auto","Petrol","White","12333",100,1000,8000,30000,40,"Available");
+        Vehicle vehicle=new Vehicle("V-004","Honda","Civic","4","Auto","Electric","White","12333",100,1000,8000,30000,40,"Available");
         vehicleRepo.save(vehicle);
 
     }
