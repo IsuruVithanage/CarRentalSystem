@@ -96,6 +96,11 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
+    public void addToUnavailable(String id) {
+        repo.changeVehicleAvailability("Unavailable",id);
+    }
+
+    @Override
     public List<VehicleDTO> getSelectedVehicles(String status) {
         return mapper.map(repo.getSelectedVehicles(status), new TypeToken<List<VehicleDTO>>() {
         }.getType());

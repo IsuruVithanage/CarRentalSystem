@@ -67,5 +67,11 @@ public class VehicleController {
         vehicleService.addTomaintain(id);
         return new ResponseUtil(200,"Save",null);
     }
+
+    @PutMapping(path = "unavailable/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil addToUnavailable(@PathVariable String id) {
+        vehicleService.addToUnavailable(id);
+        return new ResponseUtil(200,"Save",null);
+    }
 }
 

@@ -29,4 +29,9 @@ public class Vehicle {
     private double monthlyRent;
     private double extraMilagePrice;
     private String availability;
+    private String imgOne;
+    private String imgTwo;
+    private String imgThree;
+    private String imgFour;
+    private String imgFive;
 }

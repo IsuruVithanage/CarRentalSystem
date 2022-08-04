@@ -12,6 +12,7 @@ function logIn() {
     }else if ($('#checkAdmin').prop('checked')){
         loadAdminPage();
         $("#ml").css("display", "none");
+        $("#mb").css("display", "none");
         $("#ma").css("display", "block");
     }
 

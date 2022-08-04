@@ -68,6 +68,8 @@ function sendRentReq() {
         vehicleID: $("#vId").text(),
     }
 
+    addvehiUnavailable($("#vId").text());
+
     var rentOb = {
         rentID: reqOb.getrentID(),
         pickedDate: reqOb.getPickedDate(),
@@ -91,6 +93,21 @@ function sendRentReq() {
         success: function (res) {
             console.log(rentOb);
             swal("Success!", "You Request has been sent!", "success");
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
+}
+
+function addvehiUnavailable(id) {
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/vehicle/unavailable/" + id,
+        method: "PUT",
+        contentType: "application/json", //You should state request's content type using MIME types
+        success: function (res) {
+            //swal("Success!", "You Request has been sent!", "success");
         },
         error: function (ob) {
             alert(ob.responseJSON.message);
