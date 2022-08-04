@@ -9,21 +9,10 @@ function completeMaintain() {
                 $("#tblmainvehi").append(row);
             }
 
-            /*$(".tpbtn").click(function () {
-                $("#payRentID").text($(this).closest("tr").find(".nr").text());
-                $("#txtpdate").val($(this).closest("tr").find(".npd").text());
-                $("#txtrdate").val($(this).closest("tr").find(".nrd").text());
-                $("#fullTotal").text($(this).closest("tr").find(".nc").text());
-
-                nr=$(this).closest("tr").find(".nv").text();
-                nc=parseFloat($(this).closest("tr").find(".nc").text());
-
-                $("#mconfirmPay").css("display", "none");
-                $("#mPayment").css("display", "block");
-                $("#txtpdate").prop('disabled', true);
-                $("#txtrdate").prop('disabled', true);
+            $(".mtbtn").click(function () {
+                setVehicleAvailable($(this).closest("tr").find(".nv").text())
                 $(this).closest("tr").remove();
-            });*/
+            });
 
         },
         error: function (ob) {
@@ -32,3 +21,4 @@ function completeMaintain() {
     });
 
 }
+

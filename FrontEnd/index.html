@@ -572,7 +572,7 @@
 
         }
 
-        #vahimaintain {
+        #mvehimaintain {
             width: 100vw;
             height: 100vh;
             background-image: url("assets/images/bgcar3.JPG");
@@ -1484,7 +1484,7 @@
 
         <div class="vehicleContainer" style="top: 220px; left: 1090px; width: 500px">
             <a href="#" style="text-decoration: none; color: black">
-                <div class="container" style=" border-radius: 10px; width: 400px; height: 130px; position: relative">
+                <div id="vmaint" class="container" style=" border-radius: 10px; width: 400px; height: 130px; position: relative">
                     <div class="row" style="">
                         <div class="col-5">
                             <div style="background-color: rgba(255,165,0,0.6); width: 90px; height: 90px; border-radius: 100%; position: relative; top: 15px; left: 10px">
@@ -1527,9 +1527,6 @@
             <p style="position: absolute; left: 200px; top: 200px; font-size: 20px">Monthly</p>
 
         </div>
-
-
-    </div>
 
 
     </div>
@@ -1735,7 +1732,7 @@
 
     </div>
 </main>
-<main id="vahimaintain">
+<main id="mvehimaintain">
     <header>
         <div>
             <div>
@@ -1802,7 +1799,7 @@
 <script src=""></script>
 <script>
 
-    $("#ml").css("display", "none");
+    $("#ml").css("display", "block");
     $("#mh").css("display", "none");
     $("#mb").css("display", "none");
     $("#mcar").css("display", "none");
@@ -1811,7 +1808,7 @@
     $("#mra").css("display", "none");
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
-    $("#vahimaintain").css("display", "block");
+    $("#mvehimaintain").css("display", "none");
 
     loadAdminPage();
     completeMaintain();
@@ -1854,9 +1851,23 @@
 
     });
 
+    $("#vmaint").click(function () {
+        completeMaintain();
+        $("#ma").css("display", "none");
+        $("#mvehimaintain").css("display", "block");
+
+    });
+
     $("#phome").click(function () {
         $("#mPayment").css("display", "none");
         $("#mconfirmPay").css("display", "block");
+
+    });
+
+    $("#amhome").click(function () {
+        loadAdminPage();
+        $("#mvehimaintain").css("display", "none");
+        $("#ma").css("display", "block");
 
     });
 
