@@ -39,9 +39,17 @@ function addthevehicle() {
 function sendRentReq() {
     var cost;
     if ($('#checkday').prop('checked')){
-        cost=$('#dcost').text();
+        cost=parseFloat($('#dcost').text());
+        var pd=parseInt(reqOb.getPickedDate().split("-")[2]);
+        var rd=parseInt(reqOb.getReturnDate().split("-")[2]);
+        cost=cost*(rd-(pd-1));
+
+
     }else {
-        cost=$('#mcost').text();
+        cost=parseFloat($('#mcost').text());
+        var pm=parseInt(reqOb.getPickedDate().split("-")[1]);
+        var rm=parseInt(reqOb.getReturnDate().split("-")[1]);
+        cost=cost*(rm-(pm-1));
     }
 
     var dneed;
