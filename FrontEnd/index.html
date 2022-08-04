@@ -430,7 +430,7 @@
 
         }
 
-        #payreqtbl {
+        #payreqtbl,#vehimaintbl {
             width: 1600px;
             height: 600px;
             position: absolute;
@@ -511,6 +511,20 @@
             font-family: Calibri;
         }
 
+        .mtbtn{
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: orange;
+            color: white;
+            font-family: Calibri;
+        }
+
+        .mtbtn:hover{
+            background-color: #db8a00;
+        }
+
         .tcbtn:hover {
             background-color: #db8a00;
         }
@@ -551,6 +565,14 @@
         }
 
         #mPayment {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
+
+        }
+
+        #vahimaintain {
             width: 100vw;
             height: 100vh;
             background-image: url("assets/images/bgcar3.JPG");
@@ -1713,6 +1735,49 @@
 
     </div>
 </main>
+<main id="vahimaintain">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li id="amhome">Home</li>
+                </a>
+                <a href="#">
+                    <li>Places</li>
+                </a>
+                <a href="#">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+    <h1 style="position:relative; top: 20px; text-align: center; font-size: 60px; color: white">Maintanence <span
+            style="color: orange">Complete</span></h1>
+    <div id="vehimaintbl" class="tbl-wrap">
+        <table class="table" style="background-color: rgba(43,43,43,0.72); color: #ffffff">
+            <thead>
+            <tr>
+                <th scope="col">Vehicle ID</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Type</th>
+                <th scope="col">Transmission</th>
+                <th scope="col">Fuel Type</th>
+                <th scope="col">Register No</th>
+                <th scope="col">Complete</th>
+
+            </tr>
+            </thead>
+            <tbody id="tblmainvehi">
+
+
+            </tbody>
+        </table>
+    </div>
+</main>
 
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -1730,13 +1795,14 @@
 <script src="controllers/IncomeController.js"></script>
 <script src="controllers/ChartController.js"></script>
 <script src="controllers/LogingController.js"></script>
+<script src="controllers/VehicleMaintainController.js"></script>
 <script src="model/Customer.js"></script>
 <script src="model/RentReq.js"></script>
 <script src="db.js"></script>
 <script src=""></script>
 <script>
 
-    $("#ml").css("display", "block");
+    $("#ml").css("display", "none");
     $("#mh").css("display", "none");
     $("#mb").css("display", "none");
     $("#mcar").css("display", "none");
@@ -1745,8 +1811,10 @@
     $("#mra").css("display", "none");
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
+    $("#vahimaintain").css("display", "block");
 
     loadAdminPage();
+    completeMaintain();
 
     $("#ma").css("display", "none");
 
