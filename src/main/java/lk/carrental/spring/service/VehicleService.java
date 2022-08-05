@@ -21,4 +21,6 @@ public interface VehicleService {
     void addToUnavailable(String id);
 
     List<VehicleDTO> getSelectedVehicles(String status);
+
+    void saveImgOne(String p1,String p2,String p3,String p4,String p5,String id);
 }

@@ -150,7 +150,7 @@
 
         /*-------------------------------------*/
 
-        #hdiv, #ldiv, #rdiv, #addiv, #radiv, #rddiv, #vdiv, #pdiv {
+        #hdiv, #ldiv, #rdiv, #addiv, #radiv, #rddiv, #vdiv, #pdiv,#mhdiv {
             width: 700px;
             height: 400px;
             background-color: rgba(66, 64, 64, 0.83);
@@ -233,6 +233,19 @@
 
         }
 
+        #btnUpload {
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            color: white;
+            font-size: 20px;
+            background-color: orange;
+            font-family: Arial;
+            border-radius: 10px;
+
+
+        }
+
         #btnadminreg {
             position: absolute;
             top: 490px;
@@ -246,7 +259,7 @@
             border-radius: 10px;
         }
 
-        #btnhserach {
+        #btnhserach,#hserach {
             position: absolute;
             top: 310px;
             left: 260px;
@@ -325,6 +338,10 @@
             background-color: #d07001;
         }
 
+        #hserach:hover{
+            background-color: #d07001;
+        }
+
         #btnPay:hover {
             background-color: #d07001;
         }
@@ -365,7 +382,6 @@
 
 
         }
-
 
 
         .container {
@@ -437,11 +453,11 @@
 
         }
 
-        #payreqtbl,#vehimaintbl {
-            width: 1600px;
+        #payreqtbl, #vehimaintbl,#cutreqtbl {
+            width: 900px;
             height: 600px;
             position: absolute;
-            left: 50px;
+            left: 380px;
             top: 200px;
 
         }
@@ -508,13 +524,13 @@
 
         }
 
-        .dataContainer{
+        .dataContainer {
             width: 700px;
             height: 100px;
             position: absolute;
         }
 
-        .tcbtn , .tpbtn{
+        .tcbtn, .tpbtn {
             width: 80px;
             height: 35px;
             font-size: 18px;
@@ -524,7 +540,7 @@
             font-family: Calibri;
         }
 
-        .mtbtn{
+        .mtbtn {
             width: 100px;
             height: 40px;
             font-size: 20px;
@@ -534,7 +550,7 @@
             font-family: Calibri;
         }
 
-        .mtbtn:hover{
+        .mtbtn:hover {
             background-color: #db8a00;
         }
 
@@ -573,7 +589,7 @@
             overflow-y: auto;
         }
 
-        .carbrouws-wrap{
+        .carbrouws-wrap {
             height: 600px;
             overflow-y: auto;
         }
@@ -596,6 +612,13 @@
             background-image: url("assets/images/bgcar3.JPG");
             background-size: cover;
 
+        }
+
+        main{
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assets/images/bgcar3.JPG");
+            background-size: cover;
         }
 
         html {
@@ -622,6 +645,9 @@
 
         ::-webkit-scrollbar-track-piece {
             background: rgb(255, 255, 255);
+        }
+        label{
+            color: white;
         }
 
 
@@ -695,13 +721,10 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
+                    <li id="reqTab">Request</li>
                 </a>
                 <a href="#">
-                    <li id="lg">Log In</li>
-                </a>
-                <a href="#">
-                    <li id="reg">Register</li>
+                    <li id="lout">Log Out</li>
                 </a>
             </ul>
 
@@ -746,6 +769,57 @@
     </div>
 
 </main>
+<main id="mhome">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li id="mhreg">Register</li>
+                </a>
+                <a href="#">
+                    <li id="mhlg">Log In</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+
+    <h1 style="text-align: center; color: white; font-size: 100px; padding-top: 30px;">Find Your <span class="orange">Ride..</span>
+    </h1>
+
+    <div id="mhdiv">
+        <div style="position: absolute; top: 70px; left: 70px">
+            <label style="color: white; font-size: 25px">Pick Date</label>
+            <input type="date" class="form-control"
+                   aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px">
+        </div>
+        <div style="position: absolute; top: 180px; left: 70px">
+            <label style="color: white; font-size: 25px">Return Date</label>
+            <input type="date" class="form-control"
+                   aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px">
+        </div>
+
+        <div style="position: absolute; top: 70px; left: 370px">
+            <label style="color: white; font-size: 25px">Pick Time</label>
+            <input type="time" class="form-control"
+                   aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px">
+        </div>
+
+        <div style="position: absolute; top: 180px; left: 370px">
+            <label style="color: white; font-size: 25px">Pick Time</label>
+            <input type="time" class="form-control"
+                   aria-describedby="emailHelp" style="height: 50px; width: 250px; font-size: 20px; ">
+        </div>
+
+        <button type="button" id="hserach">Search</button>
+
+
+    </div>
+
+</main>
 <main id="mb">
     <header>
         <div>
@@ -756,35 +830,13 @@
                 <a href="#">
                     <li class="home">Home</li>
                 </a>
-                <a href="#">
-                    <li>Places</li>
-                </a>
-                <a href="#foo">
-                    <li>Contact Us</li>
-                </a>
             </ul>
 
         </div>
     </header>
     <h1 style="color: white; text-align: center; padding-top: 10px; font-size: 70px">Find A Sutable <span
             class="orange">Car</span></h1>
-    <div class="vehicleContainer carbrouws-wrap" >
-            <!--<div class="container" style=" border-radius: 10px;">
-                <div class="row">
-                    <div class="col-5">
-                        <img src="assets/images/c1.png" alt="" width="200" height="170"
-                             style="padding-top: 20px; padding-left: 10px">
-                    </div>
-                    <div class="col-7">
-                        <h1 id="v1name"  style="font-size: 30px; text-decoration: none; padding-top: 15px">Toyota Aqua</h1>
-                        <p id="v1seats" style="padding-top: 10px; padding-left: 20px; font-size: 20px;">4 Seats</p>
-                        <p id="v1fuel" style="position: absolute; top: 70px; font-size: 20px; left: 450px">Petrol</p>
-                        <p id="v1trans" style="position: absolute; top: 110px; padding-left: 20px; font-size: 20px;">Auto</p>
-                        <p id="v1av" style="position: absolute; top: 110px; left: 450px; font-size: 20px; color: red">
-                            Available</p>
-                    </div>
-                </div>
-            </div>-->
+    <div class="vehicleContainer carbrouws-wrap">
     </div>
 
 </main>
@@ -796,13 +848,7 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
-                </a>
-                <a href="#">
-                    <li>Places</li>
-                </a>
-                <a href="#foo">
-                    <li>Contact Us</li>
+                    <li id="brows">Brows</li>
                 </a>
             </ul>
 
@@ -857,7 +903,7 @@
                 </label>
             </div>
 
-            
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -893,7 +939,7 @@
     <h1 style="position: absolute; font-size: 45px; font-family: fantasy; color: white; left: 1250px; top: 520px">Rs
         <span id="mcost">30000</span></h1>
     <h1 id="carAvaila">Available</h1>
-    <button id="btnBook">Book</button>
+    <button type="button" id="btnBook">Book</button>
 </main>
 <main id="md">
     <header>
@@ -1202,7 +1248,7 @@
             </div>
             <ul>
                 <a href="#">
-                    <li class="home">Home</li>
+                    <li id="vhome">Home</li>
                 </a>
                 <a href="#">
                     <li>Places</li>
@@ -1219,7 +1265,7 @@
             class="orange">Registration</span>
     </h1>
 
-    <div id="vdiv" style="width: 800px; height: 630px; top: 140px">
+    <div id="vdiv" style="width: 1150px; height: 630px; top: 140px">
         <div style="position: absolute; top: 70px; left: 400px">
             <label style="color: white; font-size: 15px">Transmission</label>
             <select id="trans" class="form-select" aria-label="Default select example"
@@ -1304,6 +1350,23 @@
 
 
     </div>
+
+    <div style="width: 300px; height: 300px; left: 1060px; top: 80px; position: relative">
+        <form>
+            <label for="file1">Image 1</label>
+            <input id="file1" name="myFile" type="file" class="form-control">
+            <label for="file2">Image 2</label>
+            <input id="file2" name="myFile" type="file" class="form-control">
+            <label for="file3">Image 3</label>
+            <input id="file3" name="myFile" type="file" class="form-control">
+            <label for="file4">Image 4</label>
+            <input id="file4" name="myFile" type="file" class="form-control">
+            <label for="file5">Image 5</label>
+            <input id="file5" name="myFile" type="file" class="form-control">
+            <button type="button" id="btnUpload" style="position: absolute; left: 80px; top: 350px;">Upload File</button>
+
+        </form>
+    </div>
 </main>
 <main id="ma">
     <header>
@@ -1316,10 +1379,13 @@
                     <li id="adminHome">Home</li>
                 </a>
                 <a href="#">
-                    <li id="addAdmin">Add Admin</li>
+                    <li id="addAdmin">AddAdmin</li>
                 </a>
                 <a href="#">
-                    <li id="addDriver">Add Driver</li>
+                    <li id="addDriver">AddDriver</li>
+                </a>
+                <a href="#">
+                    <li id="addVehi">AddVehicle</li>
                 </a>
                 <a href="#">
                     <li id="alout">Log Out</li>
@@ -1346,7 +1412,8 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1 id="userCount" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1 id="userCount"
+                                style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
                             <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Total
                                 Users</p>
@@ -1367,7 +1434,8 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1 id="vehiCount" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1 id="vehiCount"
+                                style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
                             <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Available
                                 Cars</p>
@@ -1379,7 +1447,8 @@
 
         <div class="dataContainer" style="top: 40px; left: 450px">
             <a href="#" style="text-decoration: none; color: black">
-                <div id="atReq" class="container" style=" border-radius: 10px; width: 270px; height: 130px; position: relative">
+                <div id="atReq" class="container"
+                     style=" border-radius: 10px; width: 270px; height: 130px; position: relative">
                     <div class="row" style="">
                         <div class="col-5">
                             <div style="background-color: rgba(255,165,0,0.6); width: 90px; height: 90px; border-radius: 100%; position: relative; top: 15px; left: 10px">
@@ -1388,7 +1457,8 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1 id="totBooking" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1 id="totBooking"
+                                style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
                             <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Total
                                 Bookings</p>
@@ -1400,7 +1470,8 @@
 
         <div class="dataContainer" style="top: 40px; left: 750px">
             <a href="#" style="text-decoration: none; color: black">
-                <div id="agPay" class="container" style=" border-radius: 10px; width: 270px; height: 130px; position: relative">
+                <div id="agPay" class="container"
+                     style=" border-radius: 10px; width: 270px; height: 130px; position: relative">
                     <div class="row" style="">
                         <div class="col-5">
                             <div style="background-color: rgba(255,165,0,0.6); width: 90px; height: 90px; border-radius: 100%; position: relative; top: 15px; left: 10px">
@@ -1409,9 +1480,11 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1 id="paymentReq" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1 id="paymentReq"
+                                style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
-                            <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Get Payments</p>
+                            <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Get
+                                Payments</p>
                         </div>
                     </div>
                 </div>
@@ -1429,7 +1502,8 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <h1  id="drivercount" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            <h1 id="drivercount"
+                                style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
                                 200</h1>
                             <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Available
                                 Drivers</p>
@@ -1440,22 +1514,24 @@
         </div>
 
         <div class="dataContainer" style="top: 220px; left: 1090px; width: 500px">
-                <div id="vmaint" class="container" style=" border-radius: 10px; width: 400px; height: 130px; position: relative">
-                    <div class="row" style="">
-                        <div class="col-5">
-                            <div style="background-color: rgba(255,165,0,0.6); width: 90px; height: 90px; border-radius: 100%; position: relative; top: 15px; left: 10px">
-                                <img src="assets/images/repairi.png" alt="" width="64" height="64"
-                                     style="position: absolute; left: 13px; top: 10px">
-                            </div>
-                        </div>
-                        <div class="col-7">
-                            <h1 id="repairVehi" style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
-                                200</h1>
-                            <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Repair
-                                Cars</p>
+            <div id="vmaint" class="container"
+                 style=" border-radius: 10px; width: 400px; height: 130px; position: relative">
+                <div class="row" style="">
+                    <div class="col-5">
+                        <div style="background-color: rgba(255,165,0,0.6); width: 90px; height: 90px; border-radius: 100%; position: relative; top: 15px; left: 10px">
+                            <img src="assets/images/repairi.png" alt="" width="64" height="64"
+                                 style="position: absolute; left: 13px; top: 10px">
                         </div>
                     </div>
+                    <div class="col-7">
+                        <h1 id="repairVehi"
+                            style="font-size: 35px; text-decoration: none; padding-top: 25px; font-family: 'Arial Black'">
+                            200</h1>
+                        <p style="padding-left: 1px; font-size: 20px; position: absolute; top: 60px;">Repair
+                            Cars</p>
+                    </div>
                 </div>
+            </div>
         </div>
 
         <div style="box-shadow: 5px 10px 18px #363636; width: 1000px; height: 470px; position: relative; background-color: rgba(255,255,255,0.87); border-radius: 20px; left: 70px; top: 200px">
@@ -1491,7 +1567,7 @@
     <header>
         <div>
             <div>
-                <h3 >RENTACAR</h3>
+                <h3>RENTACAR</h3>
             </div>
             <ul>
                 <a href="#">
@@ -1668,12 +1744,14 @@
         </div>
 
         <div style="position: absolute; width: 50px; left: 540px; top: 230px;">
-            <h1 style="font-size: 27px; color: orange; font-family: fantasy;" >Monthly</h1>
+            <h1 style="font-size: 27px; color: orange; font-family: fantasy;">Monthly</h1>
             <h1 style="font-size: 35px; color: white; font-family: fantasy;" id="mpay">18000</h1>
         </div>
 
-        <h1 style="font-size: 45px; color: orange; font-family: fantasy; position: absolute; left: 420px; top: 345px">Total :</h1>
-        <h1 style="font-size: 55px; color: white; font-family: fantasy; position: absolute; left: 540px; top: 340px" id="fullTotal">18000</h1>
+        <h1 style="font-size: 45px; color: orange; font-family: fantasy; position: absolute; left: 420px; top: 345px">
+            Total :</h1>
+        <h1 style="font-size: 55px; color: white; font-family: fantasy; position: absolute; left: 540px; top: 340px"
+            id="fullTotal">18000</h1>
 
         <h1 style="font-size: 27px; color: orange; font-family: Calibri; position: absolute; left: 130px; top: 30px">
             Payment ID : <span id="payID" class="text-white">P-001</span></h1>
@@ -1730,6 +1808,38 @@
         </table>
     </div>
 </main>
+<main id="custreqTab">
+    <header>
+        <div>
+            <div>
+                <h3>RENTACAR</h3>
+            </div>
+            <ul>
+                <a href="#">
+                    <li id="creqhom">Home</li>
+                </a>
+            </ul>
+
+        </div>
+    </header>
+    <h1 style="position:relative; top: 20px; text-align: center; font-size: 60px; color: white">Your <span
+            style="color: orange">Requests</span></h1>
+    <div id="cutreqtbl" class="tbl-wrap">
+        <table class="table" style="background-color: rgba(43,43,43,0.72); color: #ffffff">
+            <thead>
+            <tr>
+                <th scope="col">Request ID</th>
+                <th scope="col">Status</th>
+
+            </tr>
+            </thead>
+            <tbody id="custreqtblbody">
+
+
+            </tbody>
+        </table>
+    </div>
+</main>
 
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -1748,13 +1858,14 @@
 <script src="controllers/ChartController.js"></script>
 <script src="controllers/LogingController.js"></script>
 <script src="controllers/VehicleMaintainController.js"></script>
+<script src="controllers/FileUploadController.js"></script>
 <script src="model/Customer.js"></script>
 <script src="model/RentReq.js"></script>
 <script src="db.js"></script>
 <script src=""></script>
 <script>
 
-    $("#ml").css("display", "block");
+    $("#ml").css("display", "none");
     $("#mh").css("display", "none");
     $("#mb").css("display", "none");
     $("#mcar").css("display", "none");
@@ -1764,21 +1875,13 @@
     $("#mrd").css("display", "none");
     $("#mrv").css("display", "none");
     $("#mvehimaintain").css("display", "none");
-
-
-
-    loadAdminPage();
-    completeMaintain();
-
     $("#ma").css("display", "none");
-
     $("#mreqConfirm").css("display", "none");
-
     $("#mconfirmPay").css("display", "none");
-
     $("#mPayment").css("display", "none");
+    $("#custreqTab").css("display", "none");
+    $("#mhome").css("display", "block");
 
-    genarateVehicleID();
     genarateRentID();
 
     $("#btnhserach").click(function () {
@@ -1786,6 +1889,34 @@
         $("#mh").css("display", "none");
         $("#mb").css("display", "block");
         $("#mcar").css("display", "none");
+
+    });
+
+    $("#hserach").click(function () {
+        getAllVehicle();
+        $("#mhome").css("display", "none");
+        $("#mb").css("display", "block");
+        $("#mcar").css("display", "none");
+
+    });
+
+    $("#brows").click(function () {
+        $("#mhome").css("display", "none");
+        $("#mb").css("display", "block");
+        $("#mcar").css("display", "none");
+
+    });
+
+    $("#mhlg").click(function () {
+        $("#mhome").css("display", "none");
+        $("#ml").css("display", "block");
+
+    });
+
+    $("#reqTab").click(function () {
+        loadReqDetails($("#custAcID").text());
+        $("#mh").css("display", "none");
+        $("#custreqTab").css("display", "block");
 
     });
 
@@ -1829,6 +1960,13 @@
 
     });
 
+    $("#vhome").click(function () {
+        loadAdminPage();
+        $("#mrv").css("display", "none");
+        $("#ma").css("display", "block");
+
+    });
+
     $("#lg").click(function () {
         $("#mh").css("display", "none");
         $("#ml").css("display", "block");
@@ -1837,6 +1975,12 @@
 
     $("#alout").click(function () {
         $("#ma").css("display", "none");
+        $("#ml").css("display", "block");
+
+    });
+
+    $("#lout").click(function () {
+        $("#mh").css("display", "none");
         $("#ml").css("display", "block");
 
     });
@@ -1883,6 +2027,13 @@
 
     });
 
+    $("#addVehi").click(function () {
+        genarateVehicleID();
+        $("#ma").css("display", "none");
+        $("#mrv").css("display", "block");
+
+    });
+
     $(".aHome").click(function () {
         loadAdminPage();
         $("#ma").css("display", "block");
@@ -1925,15 +2076,6 @@
 
     });
 
-    $("#btnBook").click(function () {
-        $("#mh").css("display", "none");
-        $("#mb").css("display", "none");
-        $("#mcar").css("display", "none");
-
-        $("#mreqConfirm").css("display", "none");
-        getPendingAllReq();
-
-    });
 
     function loadAdminPage() {
         setUserCount();

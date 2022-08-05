@@ -16,10 +16,10 @@ public class RequestDeniedDetailsController {
     @Autowired
     RequestDeniedDetailsService requestDeniedDetailsService;
 
-    /*@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllRentReq() {
-        return new ResponseUtil(200,"Ok",requestDeniedDetailsService.getAllRentReq());
-    }*/
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAReqDetails(@PathVariable String id) {
+        return new ResponseUtil(200,"Ok",requestDeniedDetailsService.getDetails(id));
+    }
 
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)

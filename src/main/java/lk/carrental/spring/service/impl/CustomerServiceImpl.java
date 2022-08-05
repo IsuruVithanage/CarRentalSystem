@@ -40,6 +40,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public List<CustomerDTO> getCustByUser(String id) {
+        return mapper.map(repo.findCustByUser(id), new TypeToken<List<CustomerDTO>>() {
+        }.getType());
+    }
+
+    @Override
     public void deleteCustomer(String id) {
         if (repo.existsById(id)) {
             repo.deleteById(id);

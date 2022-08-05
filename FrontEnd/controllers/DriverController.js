@@ -50,7 +50,7 @@ function saveDriver() {
         data: JSON.stringify(cusOb),
         success: function (res) {
             console.log("Customer saved");
-            swal("Success!", "You Are Successfully Registered!", "success");
+            swal("Success!", "Driver Saved!", "success");
         },
         error: function (ob) {
             alert(ob.responseJSON.message);

@@ -23,6 +23,7 @@ function genarateVehicleID() {
 }
 
 function getAllVehicle() {
+    var baseurl="http://localhost:8080/CarRentalSystem_war/";
     $.ajax({
         url: "http://localhost:8080/CarRentalSystem_war/vehicle",
         method: "GET",
@@ -31,7 +32,7 @@ function getAllVehicle() {
                 const newDiv = $('<div class="container" style="margin: 0 1em 1em 0; border-radius: 10px;">\n' +
                     '                <div class="row">\n' +
                     '                    <div class="col-5">\n' +
-                    '                        <img src='+argument.imgOne+' alt="" width="200" height="170"\n' +
+                    '                        <img src='+baseurl+argument.imgOne+' alt="" width="200" height="170"\n' +
                     '                             style="padding-top: 20px; padding-left: 10px">\n' +
                     '                    </div>\n' +
                     '                    <div class="col-7" style="position: relative">\n' +
@@ -104,11 +105,18 @@ function saveVehicle() {
         fuelType: $('#futype').find(":selected").text(),
         color: $("#color").val(),
         regNumber: $("#regNo").val(),
+        dailyMilage: $("#extramile").val(),
+        monthlyMilage: $("#extramile").val(),
         extraMilage: $("#extramile").val(),
         dailyRent: $("#dailyrent").val(),
         monthlyRent: $("#monthlyRent").val(),
         extraMilagePrice: $("#FreeMilage").val(),
-        availability: "Available"
+        availability: "Available",
+        imgOne: null,
+        imgTwo: null,
+        imgThree: null,
+        imgFour: null,
+        imgFive: null
     }
 
     $.ajax({

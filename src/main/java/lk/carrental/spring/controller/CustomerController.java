@@ -44,9 +44,16 @@ public class CustomerController {
         return new ResponseUtil(200,"Ok",customerService.searchCustomer(id));
     }
 
+    @GetMapping(path = "byUser/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getCustByUSer(@PathVariable String id) {
+        return new ResponseUtil(200,"Ok",customerService.getCustByUser(id));
+    }
+
     @GetMapping(path = "/GenerateCustID",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil generateCustID() {
         return new ResponseUtil(200,"Ok",customerService.generateCustID());
     }
+
+
 
 }

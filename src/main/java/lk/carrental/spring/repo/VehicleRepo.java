@@ -18,4 +18,8 @@ public interface VehicleRepo extends JpaRepository<Vehicle, String> {
     @Modifying
     @Query(value = "UPDATE Vehicle SET availability=:status WHERE vehicleID=:id")
     void changeVehicleAvailability(@Param("status")String status,@Param("id")String id);
+
+    @Modifying
+    @Query(value = "UPDATE Vehicle SET imgOne=:path1,imgTwo=:path2,imgThree=:path3,imgFour=:path4,imgFive=:path5 WHERE vehicleID=:id")
+    void saveImgOne(@Param("path1")String path1,@Param("path2")String path2,@Param("path3")String path3,@Param("path4")String path4,@Param("path5")String path5,@Param("id")String id);
 }

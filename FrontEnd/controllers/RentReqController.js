@@ -1,10 +1,13 @@
 $("#btnhserach").click(function () {
     gettingDateAndTime();
+    cleartxtHome();
 });
 
 $("#btnBook").click(function () {
     addthevehicle();
     sendRentReq();
+    $("#mb").css("display", "block");
+    $("#mcar").css("display", "none");
 });
 
 function genarateRentID() {
@@ -27,12 +30,15 @@ function genarateRentID() {
 
 function gettingDateAndTime() {
     reqOb.gettingDates($("#rentID").text(), $("#custAcID").text(), "Yes", $("#pickDate").val(), $("#pickTime").val(), $("#returnDate").val(), $("#returnTime").val());
-    console.log(reqOb);
+}
+
+function cleartxtHome() {
+    $('#pickDate,#pickTime,#returnDate,#returnTime,#returnDate').val("");
+
 }
 
 function addthevehicle() {
-    reqOb.setVehicle($("#vId").text())
-    console.log(reqOb);
+    reqOb.setVehicle($("#vId").text());
 
 }
 
@@ -91,7 +97,6 @@ function sendRentReq() {
         contentType: "application/json",
         data: JSON.stringify(rentOb),
         success: function (res) {
-            console.log(rentOb);
             swal("Success!", "You Request has been sent!", "success");
         },
         error: function (ob) {

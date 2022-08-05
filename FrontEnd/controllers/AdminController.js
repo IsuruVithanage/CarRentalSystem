@@ -163,7 +163,7 @@ function saveAdmin() {
         data: JSON.stringify(adminOb),
         success: function (res) {
             console.log("Admin saved");
-            swal("Success!", "You Are Successfully Registered!", "success");
+            swal("Success!", "Admin saved!", "success");
         },
         error: function (ob) {
             alert(ob.responseJSON.message);

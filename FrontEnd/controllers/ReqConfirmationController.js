@@ -5,14 +5,13 @@ function getPendingAllReq() {
         method: "GET",
         success: function (resp) {
             for (const req of resp.data) {
-                let row = `<tr><td class="nr">${req.rentID}</td><td>${req.customer.custID}</td><td>${req.pickedDate}</td><td>${req.pickedTime}</td><td>${req.returnDate}</td><td>${req.returnTime}</td><td>${req.vehicle.vehicleID}</td><td>${req.driverNeed}</td><td><button class="tcbtn">Confirm</button></td><td><button class="tdbtn">Deny</button></td></tr>`;
+                let row = `<tr><td class="nr">${req.rentID}</td><td class="ncus">${req.customer.custID}</td><td>${req.pickedDate}</td><td>${req.pickedTime}</td><td>${req.returnDate}</td><td>${req.returnTime}</td><td>${req.vehicle.vehicleID}</td><td>${req.driverNeed}</td><td><button class="tcbtn">Confirm</button></td><td><button class="tdbtn">Deny</button></td></tr>`;
                 $("#mreqConfirmtbl").append(row);
             }
 
             $(".tcbtn").click(function () {
-                /*var b=confirmReq($(this).closest("tr").find(".nr").text());
-                console.log(b);*/
                 var rentID=$(this).closest("tr").find(".nr").text();
+                var cId=$(this).closest("tr").find(".ncus").text();
                 var closest = $(this).closest("tr");
 
                 $.ajax({
@@ -21,8 +20,9 @@ function getPendingAllReq() {
                     contentType: "application/json", //You should state request's content type using MIME types
                     success: function (res) {
                         if (res.data){
+                            denyReqMessage(rentID, "Your Request Confirmed",cId);
                             closest.remove();
-                            swal("Success!", "You Request has been sent!", "success");
+                            swal("Success!", "Request Confirmed!", "success");
                         }else {
                             swal("Warning!", "No available driver for this request!", "warning");
                         }
@@ -36,11 +36,11 @@ function getPendingAllReq() {
             });
 
             $(".tdbtn").click(function () {
-                swal("Write something here:", {
+                swal("Reason :", {
                     content: "input",
                 })
                     .then((value) => {
-                        denyReqMessage($(this).closest("tr").find(".nr").text(), value);
+                        denyReqMessage($(this).closest("tr").find(".nr").text(), value,$(this).closest("tr").find(".ncus").text());
                         denyReq($(this).closest("tr").find(".nr").text());
                     });
 
@@ -97,11 +97,14 @@ function denyReq(rentID) {
 
 
 
-function denyReqMessage(rentID, message) {
+function denyReqMessage(rentID, message, cid) {
     var denyReqOb = {
         denyReqID: rentID,
-        message: message
+        message: message,
+        cID: cid
     }
+
+    console.log(cid);
 
     $.ajax({
         url: "http://localhost:8080/CarRentalSystem_war/reqdeny",
@@ -109,7 +112,7 @@ function denyReqMessage(rentID, message) {
         contentType: "application/json",
         data: JSON.stringify(denyReqOb), //You should state request's content type using MIME types
         success: function (res) {
-            swal("Success!", "You Request has been denied!", "success");
+            swal("Success!", "Request has been denied!", "success");
         },
         error: function (ob) {
             alert(ob.responseJSON.message);
@@ -205,5 +208,7 @@ function calculateExtraMilage(id,cost) {
     });
 
 }
+
+
 
 

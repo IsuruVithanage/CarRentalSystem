@@ -49,6 +49,14 @@ public class CustomerRepoTest {
         }
     }
 
+    @Test
+    public void fetCuts() {
+        List<Customer> all = customerRepo.findCustByUser("U-002");
+        for (Customer customer : all) {
+            System.out.println(customer.toString());
+        }
+    }
+
 
     @Test
     public String generateuserid() {

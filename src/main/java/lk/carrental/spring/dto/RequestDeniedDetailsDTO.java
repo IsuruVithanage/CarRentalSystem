@@ -12,4 +12,5 @@ import lombok.ToString;
 public class RequestDeniedDetailsDTO {
     private String denyReqID;
     private String message;
+    private String cID;
 }

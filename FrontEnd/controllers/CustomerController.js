@@ -71,3 +71,20 @@ function searchCustomer(custID) {
     });
 
 }
+
+function loadReqDetails(id) {
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war/reqdeny/" + id,
+        method: "GET",
+        success: function (res) {
+            for (const req of res.data) {
+                let row = `<tr><td class="nr">${req.rentID}</td><td>${req.message}</td></tr>`;
+                $("#custreqtblbody").append(row);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
+}

@@ -102,7 +102,7 @@ function savePayment() {
                     }else {
                         setVehicleAvailable(vehicelID);
                     }
-                    swal("Success!", "You Are Successfully Registered!", "success");
+                    swal("Success!", "Payment Successful!", "success");
                 },
                 error: function (ob) {
                     alert(ob.responseJSON.message);

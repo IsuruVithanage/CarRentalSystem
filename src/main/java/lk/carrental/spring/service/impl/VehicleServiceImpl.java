@@ -105,4 +105,9 @@ public class VehicleServiceImpl implements VehicleService {
         return mapper.map(repo.getSelectedVehicles(status), new TypeToken<List<VehicleDTO>>() {
         }.getType());
     }
+
+    @Override
+    public void saveImgOne(String p1,String p2,String p3,String p4,String p5, String id) {
+        repo.saveImgOne(p1,p2,p3,p4,p5,id);
+    }
 }
